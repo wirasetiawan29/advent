@@ -1,0 +1,82 @@
+/* 
+  GranthLocalization.strings
+  Granth
+*/
+
+// Walk Through
+EBOOKS = "E Books";
+BUY_BOOKS = "Buy Books";
+READ_OFFLINE = "Read Offline";
+RATE_REVIEW = "Rate and Review";
+LOREM_TEXT = "Lorem ipsum is simply dummy text of pricing and typesetting industry.Lorem ipsum has been the industry's standard dummy text ever sinces the 1500s.";
+
+// Splash Screen
+GRANTH = "Granth";
+WELCOME_MSG = "Welcome to eBooks Spot";
+
+// SideMenu
+SETTINGS = " Settings";
+APP = " App";
+DASHBOARD = "DashBoard";
+MY_LIBRARY = "My Library";
+MY_CART = "My Cart";
+WISHLIST = "WishList";
+TRANSCATION_HISTORY = "Transcation History";
+CHANGE_PASSWORD = "Change Password";
+LOGOUT = "Logout";
+SHARE_APP = "Share App";
+RATE_APP = "Rate App";
+PRIVACY_POLICY = "Privacy Policy";
+TERM_AND_CONDITION = "Term And Condition";
+FEEDBACK = "Feedback";
+INFO = "About App";
+
+//SearchView.
+
+BY_PRICE = "BY PRICE";
+BY_RATING = "BY RATING";
+CANCEL = "Cancel";
+FILTER_LIST = "Filter List";
+
+// Author Details..
+READ_MORE = "Read More";
+READ_LESS = "Read Less";
+PUBLISH_BOOK = "Publish Book : ";
+
+// Home View..
+
+VIEW_ALL = "View All";
+TOP_SEARCH_BOOKS = "Top Search Books";
+POPULAR_BOOKS = "Popular Books";
+RECOMMANDED_BOOKS = "Recommanded Books";
+TOP_SELLING_BOOKS = "Top Selling Books";
+BEST_AUTHORS = "Best Authors";
+
+// Add to Cart
+PRICE_DETAIL = "Price Detail";
+TOTAL_MRP = "Total MRP";
+TOTAL_AMOUNT = "Total Amount : ";
+TOTAL = "Total";
+CONTINUE = "Coutinue";
+
+LOGIN = "Login";
+
+// Change Password
+CHANGE_PASSWORD = "change Password";
+
+// Transaction History
+TRANSACTION_HISTORY = "Transaction History";
+MY_LIBRARY = "My Library";
+
+// Place Order View.
+PLACE_ORDER = "Place Order";
+
+// Message.
+NO_RECORD_FOUND = "No Record Found";
+
+//Forgot Password
+FORGOT_PASSWORD = "Forgot Password";
+
+// Book Detail.
+READ = "Read";
+BUY_NOW = "Buy Now";

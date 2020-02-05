@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="88" id="KGk-i7-Jjw" customClass="TopReviewsTableCell" customModule="Granth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqI-f0-7gu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-Ps-lF0" customClass="ThemeImageView">
+                                <rect key="frame" x="8" y="17.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DpT-Me-qnj"/>
+                                    <constraint firstAttribute="width" constant="50" id="reO-gZ-ILy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRd-hU-KW3" customClass="ThemeLabel">
+                                <rect key="frame" x="66" y="31.5" width="246" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHB-Wh-4Di" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="66" y="56.5" width="100" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="H7B-Nm-naC"/>
+                                    <constraint firstAttribute="width" constant="100" id="jgR-ar-WSb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="1" green="0.74539411879999995" blue="0.013881229829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-09-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGG-ee-84B" customClass="ThemeLabel">
+                                <rect key="frame" x="174" y="58" width="138" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs. Twila Osinski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arU-dq-4bX" customClass="ThemeLabel">
+                                <rect key="frame" x="66" y="8" width="246" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="arU-dq-4bX" firstAttribute="leading" secondItem="Sud-Ps-lF0" secondAttribute="trailing" constant="8" id="3iT-7X-h5K"/>
+                            <constraint firstAttribute="trailing" secondItem="arU-dq-4bX" secondAttribute="trailing" constant="8" id="CHX-cm-fKf"/>
+                            <constraint firstItem="arU-dq-4bX" firstAttribute="top" secondItem="MqI-f0-7gu" secondAttribute="top" constant="8" id="GCK-2W-T9r"/>
+                            <constraint firstItem="yHB-Wh-4Di" firstAttribute="leading" secondItem="Sud-Ps-lF0" secondAttribute="trailing" constant="8" id="W3L-OO-p99"/>
+                            <constraint firstItem="oRd-hU-KW3" firstAttribute="top" secondItem="arU-dq-4bX" secondAttribute="bottom" constant="4" id="ar0-uB-78K"/>
+                            <constraint firstItem="Sud-Ps-lF0" firstAttribute="leading" secondItem="MqI-f0-7gu" secondAttribute="leading" constant="8" id="bdX-s1-E24"/>
+                            <constraint firstItem="rGG-ee-84B" firstAttribute="centerY" secondItem="yHB-Wh-4Di" secondAttribute="centerY" id="fL8-wh-2YD"/>
+                            <constraint firstAttribute="trailing" secondItem="rGG-ee-84B" secondAttribute="trailing" constant="8" id="rN9-QI-X8F"/>
+                            <constraint firstItem="rGG-ee-84B" firstAttribute="leading" secondItem="yHB-Wh-4Di" secondAttribute="trailing" constant="8" id="rQT-fA-oDD"/>
+                            <constraint firstItem="oRd-hU-KW3" firstAttribute="leading" secondItem="Sud-Ps-lF0" secondAttribute="trailing" constant="8" id="sHL-7P-6ac"/>
+                            <constraint firstItem="Sud-Ps-lF0" firstAttribute="centerY" secondItem="MqI-f0-7gu" secondAttribute="centerY" id="tWh-Do-sIg"/>
+                            <constraint firstAttribute="trailing" secondItem="oRd-hU-KW3" secondAttribute="trailing" constant="8" id="uHO-yM-jAL"/>
+                            <constraint firstItem="yHB-Wh-4Di" firstAttribute="top" secondItem="oRd-hU-KW3" secondAttribute="bottom" constant="8" id="uYr-BX-bz2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MqI-f0-7gu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MFF-a1-ByE"/>
+                    <constraint firstAttribute="bottom" secondItem="MqI-f0-7gu" secondAttribute="bottom" id="NEc-tH-yfD"/>
+                    <constraint firstAttribute="trailing" secondItem="MqI-f0-7gu" secondAttribute="trailing" id="ZVX-Mm-Eou"/>
+                    <constraint firstItem="MqI-f0-7gu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mbk-iW-0XU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgReviewer" destination="Sud-Ps-lF0" id="78c-Eu-An6"/>
+                <outlet property="lblComment" destination="oRd-hU-KW3" id="nHN-KF-AvH"/>
+                <outlet property="lblDate" destination="rGG-ee-84B" id="8m2-Vi-XBe"/>
+                <outlet property="lblName" destination="arU-dq-4bX" id="3dL-7N-DQa"/>
+                <outlet property="vwRating" destination="yHB-Wh-4Di" id="Q29-W0-2yC"/>
+            </connections>
+            <point key="canvasLocation" x="131.25" y="128.75"/>
+        </tableViewCell>
+    </objects>
+</document>

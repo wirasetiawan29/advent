@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="HomeAuthorsCollectionCell" customModule="Granth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEB-wM-fvc">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Pfl-3g-3sw" customClass="ThemeImageView">
+                                <rect key="frame" x="10" y="8" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.62352941179999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0uR-Y7-GzA"/>
+                                    <constraint firstAttribute="height" constant="80" id="yXW-Dz-tZ4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-Zc-aD1">
+                                <rect key="frame" x="4" y="96" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="D3B-Zc-aD1" firstAttribute="top" secondItem="Pfl-3g-3sw" secondAttribute="bottom" constant="8" id="2w1-h8-oaT"/>
+                            <constraint firstAttribute="trailing" secondItem="D3B-Zc-aD1" secondAttribute="trailing" constant="4" id="E1g-W2-YNc"/>
+                            <constraint firstItem="Pfl-3g-3sw" firstAttribute="centerX" secondItem="xEB-wM-fvc" secondAttribute="centerX" id="Njy-2i-U0Z"/>
+                            <constraint firstItem="Pfl-3g-3sw" firstAttribute="top" secondItem="xEB-wM-fvc" secondAttribute="top" constant="8" id="W5E-Ra-Zd4"/>
+                            <constraint firstItem="D3B-Zc-aD1" firstAttribute="leading" secondItem="xEB-wM-fvc" secondAttribute="leading" constant="4" id="aip-65-VtP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xEB-wM-fvc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BTs-NC-XYa"/>
+                <constraint firstAttribute="bottom" secondItem="xEB-wM-fvc" secondAttribute="bottom" id="bqg-7q-Eew"/>
+                <constraint firstItem="xEB-wM-fvc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mZU-fG-3qE"/>
+                <constraint firstAttribute="trailing" secondItem="xEB-wM-fvc" secondAttribute="trailing" id="rgm-QF-G9o"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="96" height="113"/>
+            <connections>
+                <outlet property="imgAuthorProfile" destination="Pfl-3g-3sw" id="mCx-fM-W2v"/>
+                <outlet property="lblAuthorName" destination="D3B-Zc-aD1" id="Txb-z7-kvO"/>
+            </connections>
+            <point key="canvasLocation" x="78.75" y="73.75"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icoPlaceholder" width="138" height="103.5"/>
+    </resources>
+</document>

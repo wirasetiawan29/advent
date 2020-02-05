@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="HomeBooksCollectionCell" customModule="Granth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-Is-Key">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-Qk-gUe" customClass="ThemeImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
+                                <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="gs0-Tm-4B9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-ra-GBH" customClass="ThemeLabel">
+                                <rect key="frame" x="4" y="188" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-iV-6bq" customClass="ThemeLabel">
+                                <rect key="frame" x="4" y="213" width="142" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T4M-Qk-gUe" firstAttribute="centerX" secondItem="eRw-Is-Key" secondAttribute="centerX" id="1Mo-t9-ggc"/>
+                            <constraint firstItem="T4M-Qk-gUe" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" id="29M-Wd-QTH"/>
+                            <constraint firstItem="MI6-iV-6bq" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="4" id="7m0-CN-0qK"/>
+                            <constraint firstItem="yBY-ra-GBH" firstAttribute="top" secondItem="T4M-Qk-gUe" secondAttribute="bottom" constant="8" id="IdS-VI-xTH"/>
+                            <constraint firstAttribute="trailing" secondItem="T4M-Qk-gUe" secondAttribute="trailing" id="Kjv-rO-6vb"/>
+                            <constraint firstItem="MI6-iV-6bq" firstAttribute="top" secondItem="yBY-ra-GBH" secondAttribute="bottom" constant="4" id="Pou-oK-kVB"/>
+                            <constraint firstAttribute="trailing" secondItem="yBY-ra-GBH" secondAttribute="trailing" constant="4" id="dMX-vJ-e0Y"/>
+                            <constraint firstAttribute="trailing" secondItem="MI6-iV-6bq" secondAttribute="trailing" constant="4" id="e4J-di-uLx"/>
+                            <constraint firstItem="T4M-Qk-gUe" firstAttribute="top" secondItem="eRw-Is-Key" secondAttribute="top" id="j6g-lI-UKt"/>
+                            <constraint firstItem="yBY-ra-GBH" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="4" id="jM7-fe-rUv"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="eRw-Is-Key" secondAttribute="bottom" id="5Qc-c0-1ux"/>
+                <constraint firstItem="eRw-Is-Key" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cca-WS-vt5"/>
+                <constraint firstAttribute="trailing" secondItem="eRw-Is-Key" secondAttribute="trailing" id="UzM-GO-EFw"/>
+                <constraint firstItem="eRw-Is-Key" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m2X-mF-Wu9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="151" height="238"/>
+            <connections>
+                <outlet property="imgBookCover" destination="T4M-Qk-gUe" id="XYa-6g-xht"/>
+                <outlet property="lblBookName" destination="yBY-ra-GBH" id="Rh6-ue-FiJ"/>
+                <outlet property="lblBookPrice" destination="MI6-iV-6bq" id="p18-8P-B88"/>
+                <outlet property="vwBackground" destination="eRw-Is-Key" id="klb-aE-vIz"/>
+            </connections>
+            <point key="canvasLocation" x="178.125" y="187.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icoPlaceholder" width="138" height="103.5"/>
+    </resources>
+</document>

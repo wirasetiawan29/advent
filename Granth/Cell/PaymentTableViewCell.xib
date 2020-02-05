@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentCell" id="KGk-i7-Jjw" customClass="PaymentTableViewCell" customModule="Granth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLe-PR-4PQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9E-Mi-kAD" customClass="ThemeLabel">
+                                <rect key="frame" x="8" y="8" width="276" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxQ-cH-Awq">
+                                <rect key="frame" x="292" y="12" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="8yf-xb-xPJ"/>
+                                    <constraint firstAttribute="height" constant="20" id="Msm-tu-ODs"/>
+                                </constraints>
+                                <state key="normal" image="icoRadioUnchecked"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q9E-Mi-kAD" firstAttribute="leading" secondItem="zLe-PR-4PQ" secondAttribute="leading" constant="8" id="38P-tq-xbp"/>
+                            <constraint firstItem="q9E-Mi-kAD" firstAttribute="top" secondItem="zLe-PR-4PQ" secondAttribute="top" constant="8" id="4Sy-KZ-YHM"/>
+                            <constraint firstItem="GxQ-cH-Awq" firstAttribute="leading" secondItem="q9E-Mi-kAD" secondAttribute="trailing" constant="8" id="8LL-dP-WIY"/>
+                            <constraint firstAttribute="trailing" secondItem="GxQ-cH-Awq" secondAttribute="trailing" constant="8" id="hgT-vS-2UK"/>
+                            <constraint firstAttribute="bottom" secondItem="q9E-Mi-kAD" secondAttribute="bottom" constant="8" id="oUP-5G-PIe"/>
+                            <constraint firstItem="GxQ-cH-Awq" firstAttribute="centerY" secondItem="q9E-Mi-kAD" secondAttribute="centerY" id="zYv-qK-xRp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zLe-PR-4PQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gNa-zq-xDL"/>
+                    <constraint firstAttribute="trailing" secondItem="zLe-PR-4PQ" secondAttribute="trailing" id="psp-cr-kfw"/>
+                    <constraint firstAttribute="bottom" secondItem="zLe-PR-4PQ" secondAttribute="bottom" id="zTz-Gc-eBF"/>
+                    <constraint firstItem="zLe-PR-4PQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zqS-PK-3Hq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnSelected" destination="GxQ-cH-Awq" id="dUV-U0-nQi"/>
+                <outlet property="lblTitle" destination="q9E-Mi-kAD" id="KYW-Hw-toi"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icoRadioUnchecked" width="48" height="48"/>
+    </resources>
+</document>

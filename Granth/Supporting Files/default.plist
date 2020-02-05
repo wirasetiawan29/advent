@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>font0</key>
+	<string>googlesansregular</string>
+	<key>font1</key>
+	<string>googlesansmedium</string>
+	<key>font2</key>
+	<string>googlesansbold</string>
+	<key>fSize0</key>
+	<string>10</string>
+	<key>fSize1</key>
+	<string>12</string>
+	<key>fSize2</key>
+	<string>14</string>
+	<key>fSize3</key>
+	<string>16</string>
+	<key>fSize4</key>
+	<string>18</string>
+	<key>fSize5</key>
+	<string>20</string>
+	<key>fSize6</key>
+	<string>24</string>
+	<key>fSize7</key>
+	<string>36</string>
+	<key>fSize8</key>
+	<string>40</string>
+	<key>primaryColor</key>
+	<string>000335</string>
+	<key>secondaryColor</key>
+	<string>26287F</string>
+	<key>primaryTextColor</key>
+	<string>464545</string>
+	<key>secondaryTextColor</key>
+	<string>6e6e6e</string>
+	<key>textChildColor</key>
+	<string>747474</string>
+	<key>viewAllColor</key>
+	<string>DBDBEF</string>
+	<key>colorAccent</key>
+	<string>ee4444</string>
+	<key>white</key>
+	<string>ffffff</string>
+	<key>black</key>
+	<string>000000</string>
+	<key>green</key>
+	<string>46A346</string>
+</dict>
+</plist>
