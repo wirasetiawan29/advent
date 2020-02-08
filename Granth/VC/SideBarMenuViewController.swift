@@ -308,8 +308,9 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
         }else {
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
-                    let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
-                    AppDelegate.getDelegate()?.navigationController.pushViewController(vc, animated: true)
+//                    let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
+//                    AppDelegate.getDelegate()?.navigationController.pushViewController(vc, animated: true)
+                    AppDelegate.getDelegate()?.navigationController.popViewController(animated: true)
                     frostedViewController?.hideMenuViewController()
                 }
             }

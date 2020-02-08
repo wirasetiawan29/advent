@@ -95,8 +95,19 @@ class walkthroughViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBAction func btnSkip_Clicked(_ sender: Any) {
          TPreferences.writeBoolean(WALKTHROUGH, value: true)
-        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let tabBarController = UITabBarController()
+        let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let controllers = [tabViewController1, tabViewController2, tabViewController3]
+        tabBarController.viewControllers = controllers
+
+        tabViewController1.tabBarItem = UITabBarItem(title: "Buku", image: UIImage(named: "iconAgenda"), tag: 1)
+        tabViewController2.tabBarItem = UITabBarItem(title: "Renungan", image:UIImage(named: "iconText"), tag:2)
+        tabViewController3.tabBarItem = UITabBarItem(title: "Lagu Sion", image:UIImage(named: "iconMusic"), tag:3)
+        self.navigationController?.pushViewController(tabBarController, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func btnNext_Clicked(_ sender: Any) {
