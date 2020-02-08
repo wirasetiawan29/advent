@@ -23,9 +23,9 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var imgCartBookCover: UIImageView!
     
     @IBOutlet weak var lblBookName: UILabel!
-    @IBOutlet weak var lblAuthorName: UILabel!
-    @IBOutlet weak var lblReview: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
+//    @IBOutlet weak var lblAuthorName: UILabel!
+//    @IBOutlet weak var lblReview: UILabel!
+//    @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblBookAuthorName: UILabel!
     @IBOutlet weak var lblCartBookName: UILabel!
@@ -36,7 +36,7 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var lblTotalCartItem: UILabel!
     
-    @IBOutlet weak var vwStar: CosmosView!
+//    @IBOutlet weak var vwStar: CosmosView!
     @IBOutlet weak var vwPopup: UIView!
     @IBOutlet weak var vwPopRateBook: UIView!
     @IBOutlet weak var vwRating: CosmosView!
@@ -160,9 +160,6 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     func Setupvalue() {
         let dicBookDetail: NSDictionary = arrBookDetail[0] as! NSDictionary
         lblBookName.text = "\(dicBookDetail.value(forKey: NAME) ?? "")"
-        lblAuthorName.text = "by \(dicBookDetail.value(forKey: AUTHOR_NAME) ?? "")"
-        lblReview.text = "\(dicBookDetail.value(forKey: TOTAL_REVIEW) ?? "") Reviews"
-        lblPrice.text = "\(PRICE_SIGN)\(dicBookDetail.value(forKey: PRICE) ?? "")"
         lblDescription.text = "\(dicBookDetail.value(forKey: DESCRIPTION) ?? "")"
         THelper.setImage(img: imgBookCover, url: URL(string: "\(dicBookDetail.value(forKey: FRONT_COVER) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
         
@@ -174,7 +171,6 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             self.scrollContainerView.backgroundColor = colors?.background
                self.bookHeaderContainerView.backgroundColor = colors?.background
                self.lblBookName.textColor = colors?.primary
-                 self.lblAuthorName.textColor = colors?.secondary
                  self.lblDescription.textColor = colors?.detail
              }
     }
@@ -375,13 +371,13 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func btnShare_Clicked(_ sender: Any) {
-        let text = "\(lblBookName.text ?? "") \(lblAuthorName.text ?? "")"
+//        let text = "\(lblBookName.text ?? "") \(lblAuthorName.text ?? "")"
         
-        let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
-        self.present(activityViewController, animated: true, completion: nil)
+//        let textToShare = [ text ]
+//        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+//        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+//        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func btnWishlist_Clicked(_ sender: Any) {
