@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +12,7 @@
             <connections>
                 <outlet property="btnRember" destination="U5x-Td-eMU" id="KmE-rw-4U3"/>
                 <outlet property="btnSignin" destination="wt0-Af-MrG" id="xEh-qv-L8v"/>
+                <outlet property="googleButton" destination="UmI-8q-jij" id="K6H-eU-kvB"/>
                 <outlet property="imgRemberMe" destination="Lyu-gr-bQ2" id="qHI-KX-Uib"/>
                 <outlet property="txtEmail" destination="3yy-Kg-ihn" id="0PA-q3-5J6"/>
                 <outlet property="txtPassWord" destination="tw5-8L-dod" id="jR0-6A-x4P"/>
@@ -30,13 +29,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khm-dn-eeg">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="316"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login" translatesAutoresizingMaskIntoConstraints="NO" id="x8V-aK-gW8">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="316"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wV-Ut-ZzB">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="316"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
                             <subviews>
                                 <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvE-CB-ccf" customClass="ThemeButton">
                                     <rect key="frame" x="16" y="32" width="40" height="40"/>
@@ -76,7 +75,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRN-Pd-lhD" customClass="ThemeLabel">
-                    <rect key="frame" x="16" y="223" width="109.5" height="29"/>
+                    <rect key="frame" x="16" y="175" width="109.5" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -87,7 +86,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpN-FS-mmA">
-                    <rect key="frame" x="16" y="268" width="288" height="346"/>
+                    <rect key="frame" x="16" y="220" width="288" height="394"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWI-yj-DXZ" customClass="ThemeLabel">
                             <rect key="frame" x="16" y="16" width="256" height="30"/>
@@ -117,7 +116,6 @@
                                 </imageView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yy-Kg-ihn" customClass="ThemeTextField">
                                     <rect key="frame" x="4" y="0.0" width="216" height="40"/>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     <userDefinedRuntimeAttributes>
@@ -147,7 +145,6 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*****" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tw5-8L-dod" customClass="ThemeTextField">
                                     <rect key="frame" x="4" y="0.0" width="216" height="40"/>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
@@ -254,8 +251,15 @@
                                 <action selector="btnSignclick:" destination="-1" eventType="touchUpInside" id="f8f-3E-tcs"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-bl-HNv">
+                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-8q-jij" customClass="GIDSignInButton">
                             <rect key="frame" x="16" y="254" width="256" height="40"/>
+                            <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="BKV-gA-5LV"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-bl-HNv">
+                            <rect key="frame" x="16" y="302" width="256" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="2Tg-0s-JFl">
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
@@ -273,7 +277,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty9-G6-QPj">
-                            <rect key="frame" x="16" y="298" width="256" height="40"/>
+                            <rect key="frame" x="16" y="346" width="256" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="ghC-4j-GdI">
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
@@ -305,7 +309,6 @@
                         <constraint firstAttribute="trailing" secondItem="LHL-8b-ouK" secondAttribute="trailing" constant="16" id="7fj-DB-Yo2">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
-                        <constraint firstItem="L9f-bl-HNv" firstAttribute="top" secondItem="wt0-Af-MrG" secondAttribute="bottom" constant="8" id="B4w-vu-iTk"/>
                         <constraint firstItem="pWI-yj-DXZ" firstAttribute="top" secondItem="PpN-FS-mmA" secondAttribute="top" constant="16" id="CSz-49-XIi">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
@@ -328,21 +331,25 @@
                         <constraint firstAttribute="trailing" secondItem="wt0-Af-MrG" secondAttribute="trailing" constant="16" id="aT3-GJ-cVt">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
+                        <constraint firstItem="L9f-bl-HNv" firstAttribute="top" secondItem="UmI-8q-jij" secondAttribute="bottom" constant="8" id="bjv-UQ-RXV"/>
                         <constraint firstItem="SFz-qS-BEe" firstAttribute="leading" secondItem="PpN-FS-mmA" secondAttribute="leading" constant="16" id="cmZ-CS-n2S">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
+                        <constraint firstItem="UmI-8q-jij" firstAttribute="leading" secondItem="wt0-Af-MrG" secondAttribute="leading" id="eJV-lk-LNq"/>
                         <constraint firstItem="pWI-yj-DXZ" firstAttribute="leading" secondItem="PpN-FS-mmA" secondAttribute="leading" constant="16" id="fVy-oE-0F4">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
                         <constraint firstItem="L9f-bl-HNv" firstAttribute="leading" secondItem="PpN-FS-mmA" secondAttribute="leading" constant="16" id="gmM-8X-8bw">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
+                        <constraint firstItem="UmI-8q-jij" firstAttribute="top" secondItem="wt0-Af-MrG" secondAttribute="bottom" constant="8" id="k66-aN-0tq"/>
                         <constraint firstItem="LHL-8b-ouK" firstAttribute="leading" secondItem="PpN-FS-mmA" secondAttribute="leading" constant="16" id="kAI-Md-Hpl">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
                         <constraint firstAttribute="trailing" secondItem="L9f-bl-HNv" secondAttribute="trailing" constant="16" id="q18-vH-e9r">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>
+                        <constraint firstItem="UmI-8q-jij" firstAttribute="trailing" secondItem="wt0-Af-MrG" secondAttribute="trailing" id="s70-0X-hdj"/>
                         <constraint firstAttribute="trailing" secondItem="Ty9-G6-QPj" secondAttribute="trailing" constant="16" id="tBb-fv-euG">
                             <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                         </constraint>

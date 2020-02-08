@@ -607,6 +607,7 @@
 				0DAF86D8233F125700A9FFD5 /* Resources */,
 				5A3CC38CDA6F57B7CD6904F7 /* [CP] Embed Pods Frameworks */,
 				B1B91C672356EA1A00BBD075 /* Embed Frameworks */,
+				6368938C1CDC1E1ED9CE4066 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -730,6 +731,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Granth/Pods-Granth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6368938C1CDC1E1ED9CE4066 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Granth/Pods-Granth-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Granth/Pods-Granth-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Granth/Pods-Granth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCC6FBCABFA00BE2959F9A58 /* [CP] Check Pods Manifest.lock */ = {

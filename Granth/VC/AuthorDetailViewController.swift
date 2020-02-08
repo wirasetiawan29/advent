@@ -93,25 +93,14 @@ class AuthorDetailViewController: UIViewController, UICollectionViewDataSource, 
         print(self.AuthorID)
         
         getAuthorBooksListAPI()
-
-//        let imageValue = "\(dicAuthorDetail.value(forKey: IMAGE) ?? PLACEHOLDERIMAGE)"
-//        let image = UIImage(named: "\(dicAuthorDetail.value(forKey: IMAGE) ?? PLACEHOLDERIMAGE)")
-
-
         self.imgAuthorProfile.image!.getColors { colors in
-          self.headerBackground.backgroundColor = colors?.background
-          self.lblAuthorName.textColor = colors?.primary
+            self.headerBackground.backgroundColor = colors?.background
+            self.lblAuthorName.textColor = colors?.primary
             self.lblPublishBook.textColor = colors?.secondary
             self.lblDescription.textColor = colors?.detail
+            self.btnReadMore.titleLabel?.textColor = colors?.secondary
         }
 
-//        let colors = UIImage(named: "\(dicAuthorDetail.value(forKey: IMAGE) ?? PLACEHOLDERIMAGE)")!.getColors()
-//
-//        self.headerBackground.backgroundColor = colors?.background
-//        self.lblAuthorName.textColor = colors?.primary
-//        secondaryLabel.textColor = colors.secondary
-//        detailLabel.textColor = colors.detail
-        
         if IPAD {
             bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
         }
@@ -234,11 +223,17 @@ class AuthorDetailViewController: UIViewController, UICollectionViewDataSource, 
             
             self.ConstraintheightAuthorDetail.constant = size.height + CGFloat(30 * 3) + 60
             self.VwEducation.isHidden = false
+            self.imgAuthorProfile.image!.getColors { colors in
+                self.btnReadMore.titleLabel?.textColor = colors?.secondary
+            }
             btnReadMore.setTitle("Read less", for: .normal)
 
         }else {
             self.ConstraintheightAuthorDetail.constant = 80
             self.VwEducation.isHidden = true
+            self.imgAuthorProfile.image!.getColors { colors in
+                self.btnReadMore.titleLabel?.textColor = colors?.secondary
+            }
             btnReadMore.setTitle("Read more", for: .normal)
         }
     }

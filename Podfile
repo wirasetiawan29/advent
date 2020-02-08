@@ -21,6 +21,8 @@ pod 'PayPal-iOS-SDK'
 pod 'FolioReaderKit'
 pod 'Google-Mobile-Ads-SDK'
 pod 'UIImageColors'
+pod 'GoogleSignIn'
+pod 'Firebase/Auth'
 
   # Pods for Granth
 

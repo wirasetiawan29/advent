@@ -361,6 +361,7 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
            print("Logout")
             TPreferences.writeBoolean(IS_LOGINING, value: false)
              NotificationCenter.default.post(name: NSNotification.Name("REMOVE_TOTAL"), object: self, userInfo: ["flag":"1"])
+            AppDelegate.getDelegate()?.navigationController.popViewController(animated: true)
         }
     }
     

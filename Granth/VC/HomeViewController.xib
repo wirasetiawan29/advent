@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,17 +50,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-Cf-sVV">
-                    <rect key="frame" x="0.0" y="76" width="320" height="1735"/>
+                    <rect key="frame" x="0.0" y="56" width="320" height="1755"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-eE-VhV">
-                    <rect key="frame" x="0.0" y="76" width="320" height="1685"/>
+                    <rect key="frame" x="0.0" y="56" width="320" height="1705"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBU-ip-WTl">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Q0d-jj-azs">
-                                    <rect key="frame" x="4" y="4" width="312" height="212"/>
+                                    <rect key="frame" x="8" y="4" width="304" height="176"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gp4-jL-TLy">
                                         <size key="itemSize" width="50" height="50"/>
@@ -76,24 +74,25 @@
                                     </connections>
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-Bq-uac">
-                                    <rect key="frame" x="16" y="167" width="39" height="37"/>
+                                    <rect key="frame" x="140.5" y="163" width="39" height="37"/>
+                                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </pageControl>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Q0d-jj-azs" secondAttribute="bottom" constant="4" id="8Ag-wp-ZB2"/>
-                                <constraint firstAttribute="trailing" secondItem="Q0d-jj-azs" secondAttribute="trailing" constant="4" id="GRY-SI-b5C"/>
-                                <constraint firstAttribute="bottom" secondItem="qDY-Bq-uac" secondAttribute="bottom" constant="16" id="W05-lg-ePa"/>
-                                <constraint firstItem="qDY-Bq-uac" firstAttribute="leading" secondItem="lBU-ip-WTl" secondAttribute="leading" constant="16" id="d2y-wA-ClZ"/>
-                                <constraint firstAttribute="height" constant="220" id="huE-Uu-MUL">
+                                <constraint firstAttribute="trailing" secondItem="Q0d-jj-azs" secondAttribute="trailing" constant="8" id="GRY-SI-b5C"/>
+                                <constraint firstAttribute="bottom" secondItem="qDY-Bq-uac" secondAttribute="bottom" id="W05-lg-ePa"/>
+                                <constraint firstAttribute="height" constant="200" id="huE-Uu-MUL">
                                     <variation key="heightClass=regular-widthClass=regular" constant="300"/>
                                 </constraint>
+                                <constraint firstAttribute="bottom" secondItem="Q0d-jj-azs" secondAttribute="bottom" constant="20" id="lud-Zt-TGC"/>
                                 <constraint firstItem="Q0d-jj-azs" firstAttribute="top" secondItem="lBU-ip-WTl" secondAttribute="top" constant="4" id="pfi-1C-7L8"/>
-                                <constraint firstItem="Q0d-jj-azs" firstAttribute="leading" secondItem="lBU-ip-WTl" secondAttribute="leading" constant="4" id="zrq-vW-2cy"/>
+                                <constraint firstItem="qDY-Bq-uac" firstAttribute="centerX" secondItem="lBU-ip-WTl" secondAttribute="centerX" id="xaa-fQ-Dmv"/>
+                                <constraint firstItem="Q0d-jj-azs" firstAttribute="leading" secondItem="lBU-ip-WTl" secondAttribute="leading" constant="8" id="zrq-vW-2cy"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-4Y-nHT">
-                            <rect key="frame" x="0.0" y="220" width="320" height="50"/>
+                            <rect key="frame" x="0.0" y="200" width="320" height="50"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LzR-Wm-j9S">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -120,7 +119,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlP-hL-gF7">
-                            <rect key="frame" x="0.0" y="270" width="320" height="301"/>
+                            <rect key="frame" x="0.0" y="250" width="320" height="301"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-mZ-0J8">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -206,7 +205,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-j5-Tmj">
-                            <rect key="frame" x="0.0" y="571" width="320" height="301"/>
+                            <rect key="frame" x="0.0" y="551" width="320" height="301"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfn-AX-pfP">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -292,7 +291,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJ5-sg-f8L">
-                            <rect key="frame" x="0.0" y="872" width="320" height="301"/>
+                            <rect key="frame" x="0.0" y="852" width="320" height="301"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-V3-ATI">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -378,7 +377,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-Qp-jHY">
-                            <rect key="frame" x="0.0" y="1173" width="320" height="301"/>
+                            <rect key="frame" x="0.0" y="1153" width="320" height="301"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0us-77-kOv">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -464,7 +463,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-vd-1e0">
-                            <rect key="frame" x="0.0" y="1474" width="320" height="200"/>
+                            <rect key="frame" x="0.0" y="1454" width="320" height="200"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm4-g5-N5H">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -577,7 +576,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-oO-gvC">
-                    <rect key="frame" x="0.0" y="20" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQR-cz-rSi" customClass="ThemeView">
                             <rect key="frame" x="8" y="8" width="256" height="40"/>
@@ -674,7 +673,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcP-xf-IYR">
-                    <rect key="frame" x="0.0" y="20" width="320" height="1791"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1811"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqT-tI-INs">

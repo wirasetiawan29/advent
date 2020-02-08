@@ -4,6 +4,7 @@
 
 import UIKit
 import Alamofire
+import GoogleSignIn
 class LoginViewController: UIViewController {
 
 //        MARK:-
@@ -16,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var vwPassword: UIView!
     @IBOutlet weak var btnSignin: UIButton!
     
+    @IBOutlet weak var googleButton: GIDSignInButton!
     @IBOutlet weak var imgRemberMe: UIImageView!
     @IBOutlet weak var btnRember: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
@@ -27,6 +29,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         self.SetUpObject()
+        self.setupGoogleButtons()
+        self.setupGoogleSignIn()
 
     }
     
@@ -77,6 +81,76 @@ class LoginViewController: UIViewController {
         }
         
     }
+
+    func setupGoogleSignIn() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        NotificationCenter.default.addObserver(self,
+                selector: #selector(LoginViewController.receiveToggleAuthUINotification(_:)),
+                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
+                object: nil)
+        toggleAuthUI()
+    }
+
+    func toggleAuthUI() {
+         if let _ = GIDSignIn.sharedInstance()?.currentUser?.authentication {
+             self.txtEmail.text = TPreferences.readString(EMAIL)
+             self.txtPassWord.text = TPreferences.readString(PASSWORD)
+             self.imgRemberMe.image = UIImage(named: "icoUncheck")
+             self.imgRemberMe = THelper.setTintColor(self.imgRemberMe, tintColor: UIColor.primaryColor())
+             self.btnRember.isSelected = true
+
+               TPreferences.writeBoolean(REMEMBER, value: true)
+
+            let email = GIDSignIn.sharedInstance()?.currentUser.profile.email
+            let name = GIDSignIn.sharedInstance()?.currentUser.profile.name
+            let userId = GIDSignIn.sharedInstance()?.currentUser.userID
+            let token = GIDSignIn.sharedInstance()?.currentUser.authentication.idToken
+
+
+               TPreferences.writeString(EMAIL, value: email)
+               TPreferences.writeString(API_TOKEN, value: token)
+               TPreferences.writeString(NAME, value: name)
+               TPreferences.writeString(USER_ID, value: userId)
+               print(TPreferences.readString(USER_ID) ?? "")
+               let tabBarController = UITabBarController()
+               let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+               let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+               let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+               let controllers = [tabViewController1, tabViewController2, tabViewController3]
+               tabBarController.viewControllers = controllers
+
+               tabViewController1.tabBarItem = UITabBarItem(title: "Buku", image: UIImage(named: "iconAgenda"), tag: 1)
+               tabViewController2.tabBarItem = UITabBarItem(title: "Renungan", image:UIImage(named: "iconText"), tag:2)
+               tabViewController3.tabBarItem = UITabBarItem(title: "Lagu Sion", image:UIImage(named: "iconMusic"), tag:3)
+
+               TPreferences.writeBoolean(IS_LOGINING, value: true)
+               self.navigationController?.pushViewController(tabBarController, animated: true)
+
+         }
+       }
+
+    deinit {
+         NotificationCenter.default.removeObserver(self,
+             name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
+             object: nil)
+       }
+
+       @objc func receiveToggleAuthUINotification(_ notification: NSNotification) {
+         if notification.name.rawValue == "ToggleAuthUINotification" {
+           self.toggleAuthUI()
+           if notification.userInfo != nil {
+             guard let userInfo = notification.userInfo as? [String:String] else { return }
+//             self.titleLabel.text = userInfo["statusText"]!
+//               saveUser(self.titleLabel.text)
+           }
+         }
+       }
+
+    fileprivate func setupGoogleButtons() {
+
+              GIDSignIn.sharedInstance()?.delegate = self
+          }
     
     //        MARK:-
     //        MARK:- UIButton Clicked Events
@@ -173,9 +247,20 @@ class LoginViewController: UIViewController {
                         TPreferences.writeString(NAME, value: dicLogin.value(forKey: NAME)as? String)
                         TPreferences.writeString(USER_ID, value: "\(dicLogin.value(forKey: ID) ?? "")")
                         print(TPreferences.readString(USER_ID) ?? "")
-                        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                        let tabBarController = UITabBarController()
+                        let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                        let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                        let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                        let controllers = [tabViewController1, tabViewController2, tabViewController3]
+                        tabBarController.viewControllers = controllers
+
+                        tabViewController1.tabBarItem = UITabBarItem(title: "Buku", image: UIImage(named: "iconAgenda"), tag: 1)
+                        tabViewController2.tabBarItem = UITabBarItem(title: "Renungan", image:UIImage(named: "iconText"), tag:2)
+                        tabViewController3.tabBarItem = UITabBarItem(title: "Lagu Sion", image:UIImage(named: "iconMusic"), tag:3)
+
                         TPreferences.writeBoolean(IS_LOGINING, value: true)
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.navigationController?.pushViewController(tabBarController, animated: true)
+//                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                     else {
                         
@@ -191,4 +276,19 @@ class LoginViewController: UIViewController {
             }
         }
     }
+}
+
+extension LoginViewController : GIDSignInDelegate {
+    //MARK: delegate
+       func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+           if let _ = signIn.currentUser?.authentication {
+               let homeViewController = HomeViewController()
+                    let navController = UINavigationController(rootViewController: homeViewController)
+                    navController.isNavigationBarHidden = true
+                    UIApplication.shared.keyWindow?.rootViewController = navController
+           } else {
+               print("error")
+           }
+       }
+
 }
