@@ -43,7 +43,35 @@ class SplashViewController: UIViewController {
     
     @objc func updateView(){
         timer.invalidate()
-        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let tabBarController = UITabBarController()
+        let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let controllers = [tabViewController1, tabViewController2, tabViewController3]
+        tabBarController.viewControllers = controllers
+
+        tabViewController1.tabBarItem = UITabBarItem(title: "Buku", image: UIImage(named: "icoLibrary"), tag: 1)
+        tabViewController2.tabBarItem = UITabBarItem(title: "Renungan", image:UIImage(named: "icoBookmark"), tag:2)
+        tabViewController3.tabBarItem = UITabBarItem(title: "Lagu Sion", image:UIImage(named: "icoInfo"), tag:3)
+        self.navigationController?.pushViewController(tabBarController, animated: true)
+
+//        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension UITabBar {
+   override open func sizeThatFits(_ size: CGSize) -> CGSize {
+        super.sizeThatFits(size)
+        guard let window = UIApplication.shared.keyWindow else {
+            return super.sizeThatFits(size)
+        }
+        var sizeThatFits = super.sizeThatFits(size)
+    if #available(iOS 11.0, *) {
+        sizeThatFits.height = window.safeAreaInsets.bottom + 70
+    } else {
+        // Fallback on earlier versions
+    }
+        return sizeThatFits
     }
 }
