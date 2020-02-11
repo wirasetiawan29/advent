@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040AA22523F29E7300F16156 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040AA22423F29E7300F16156 /* GoogleService-Info.plist */; };
 		04C5ABF023DE8C720028D401 /* PaymentSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; };
 		04C5ABF123DE8C720028D401 /* PaymentSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2785272343483900F8312E /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2785252343483900F8312E /* AddToCartViewController.swift */; };
@@ -152,6 +153,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		040AA22423F29E7300F16156 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaymentSDK.framework; sourceTree = "<group>"; };
 		0D2785252343483900F8312E /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		0D2785262343483900F8312E /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 		0DEE87A0233F1B4D001D5ABE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				040AA22423F29E7300F16156 /* GoogleService-Info.plist */,
 				04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */,
 				0D2B1EA62350541100C52481 /* Assets.xcassets */,
 				0DAF86E9233F125F00A9FFD5 /* Info.plist */,
@@ -669,6 +672,7 @@
 				0D82D97A233F810000BDB6F9 /* SideBarTableViewCell.xib in Resources */,
 				0DB160A823420CDF0087C4E8 /* AuthorDetailViewController.xib in Resources */,
 				0D82D976233F55DF00BDB6F9 /* WalkthroughCollectionCell.xib in Resources */,
+				040AA22523F29E7300F16156 /* GoogleService-Info.plist in Resources */,
 				0D723FA32345FDD80075CD34 /* TransactionCollectionViewCell.xib in Resources */,
 				0D7989A5234715CD007B28B8 /* SearchCollectionViewCell.xib in Resources */,
 				0D731A7A233F416F00CFC89C /* googlesansbold.ttf in Resources */,

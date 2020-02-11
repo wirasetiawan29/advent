@@ -83,6 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentSandbox: "\(TPreferences.readString(PAYPAL_CLIENT_ID) ?? "")"])
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
         
         return true
     }
