@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>598062311234-54taou38ko5ghs2f2n0dlq6t34hcd2ha.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.598062311234-54taou38ko5ghs2f2n0dlq6t34hcd2ha</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA5ZZkfPDZLlYoAaQ1eDCiGJ1ZZd4HPW3g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>598062311234</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gmits.Granth</string>
+	<key>PROJECT_ID</key>
+	<string>advent-7ba4a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>advent-7ba4a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:598062311234:ios:3135122d5ade799b570adb</string>
+	<key>DATABASE_URL</key>
+	<string>https://advent-7ba4a.firebaseio.com</string>
+</dict>
+</plist>

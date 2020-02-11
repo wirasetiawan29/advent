@@ -239,7 +239,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             cell.lblCategory.layer.cornerRadius = 5.0
             cell.lblCategory.layer.borderWidth = 0.5
-            cell.lblCategory.layer.borderColor = UIColor(hexString: arrColor[indexPath.item]).cgColor
+//            cell.lblCategory.layer.borderColor = UIColor(hexString: arrColor[indexPath.item]).cgColor
             cell.lblCategory.layer.masksToBounds = true
             
             let dicBookCategories: NSDictionary = arrBookCategories[indexPath.item] as! NSDictionary
