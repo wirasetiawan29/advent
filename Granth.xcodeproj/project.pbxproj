@@ -218,7 +218,7 @@
 		0D82D978233F810000BDB6F9 /* SideBarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBarTableViewCell.xib; sourceTree = "<group>"; };
 		0D82D97B233F82A400BDB6F9 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		0D82D97C233F82A400BDB6F9 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
-		0DAF86DA233F125700A9FFD5 /* Granth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Granth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DAF86DA233F125700A9FFD5 /* Advent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Advent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAF86DD233F125700A9FFD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAF86E7233F125F00A9FFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DAF86E9233F125F00A9FFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -448,7 +448,7 @@
 		0DAF86DB233F125700A9FFD5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DAF86DA233F125700A9FFD5 /* Granth.app */,
+				0DAF86DA233F125700A9FFD5 /* Advent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -618,7 +618,7 @@
 			);
 			name = Granth;
 			productName = Granth;
-			productReference = 0DAF86DA233F125700A9FFD5 /* Granth.app */;
+			productReference = 0DAF86DA233F125700A9FFD5 /* Advent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1033,7 +1033,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmits.Granth;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Advent;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Granth/Supporting Files/Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1075,7 +1075,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmits.Granth;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Advent;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Granth/Supporting Files/Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
