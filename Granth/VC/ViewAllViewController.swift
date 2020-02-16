@@ -113,16 +113,16 @@ class ViewAllViewController: UIViewController, UICollectionViewDataSource, UICol
         cell.lblBookName.text = "\(dicBookDetail.value(forKey: NAME) ?? "")"
         cell.lblBookPrice.text = "\(PRICE_SIGN) \(dicBookDetail.value(forKey: PRICE) ?? "")"
         
-        THelper.setShadow(view: cell)
+//        THelper.setShadow(view: cell)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if IPAD {
-            return CGSize(width: (cvBooks.frame.width / 3) - 12, height: 240)
+            return CGSize(width: (cvBooks.frame.width / 4) - 12, height: 230)
         }
         else {
-            return CGSize(width: (cvBooks.frame.width / 2) - 12, height: 240)
+            return CGSize(width: (cvBooks.frame.width / 3) - 12, height: 230)
         }
     }
     

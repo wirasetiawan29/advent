@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		040AA22523F29E7300F16156 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040AA22423F29E7300F16156 /* GoogleService-Info.plist */; };
+		0471A1A423F9463C00953853 /* DashboardItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A1A223F9463C00953853 /* DashboardItemCollectionViewCell.swift */; };
+		0471A1A523F9463C00953853 /* DashboardItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0471A1A323F9463C00953853 /* DashboardItemCollectionViewCell.xib */; };
+		0471A1A823F949F300953853 /* BookCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A1A723F949F300953853 /* BookCategoryModel.swift */; };
 		04C5ABF023DE8C720028D401 /* PaymentSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; };
 		04C5ABF123DE8C720028D401 /* PaymentSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D2785272343483900F8312E /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2785252343483900F8312E /* AddToCartViewController.swift */; };
@@ -154,6 +157,9 @@
 
 /* Begin PBXFileReference section */
 		040AA22423F29E7300F16156 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0471A1A223F9463C00953853 /* DashboardItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		0471A1A323F9463C00953853 /* DashboardItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		0471A1A723F949F300953853 /* BookCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryModel.swift; sourceTree = "<group>"; };
 		04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaymentSDK.framework; sourceTree = "<group>"; };
 		0D2785252343483900F8312E /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		0D2785262343483900F8312E /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
@@ -325,6 +331,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0471A1A623F949CF00953853 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0471A1A723F949F300953853 /* BookCategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0D731A63233F1F8900CFC89C /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +444,8 @@
 				0D723FA12345FDD80075CD34 /* TransactionCollectionViewCell.xib */,
 				0D7989A2234715CD007B28B8 /* SearchCollectionViewCell.swift */,
 				0D7989A3234715CD007B28B8 /* SearchCollectionViewCell.xib */,
+				0471A1A223F9463C00953853 /* DashboardItemCollectionViewCell.swift */,
+				0471A1A323F9463C00953853 /* DashboardItemCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -456,6 +472,7 @@
 		0DAF86DC233F125700A9FFD5 /* Granth */ = {
 			isa = PBXGroup;
 			children = (
+				0471A1A623F949CF00953853 /* Models */,
 				0DEE8779233F19FC001D5ABE /* Vendor */,
 				0D731A76233F413D00CFC89C /* Font */,
 				0DEE874F233F1642001D5ABE /* Theme Manager */,
@@ -711,6 +728,7 @@
 				0D7989A823471E3D007B28B8 /* FeedbackViewController.xib in Resources */,
 				0D731A7C233F416F00CFC89C /* googlesansmedium.ttf in Resources */,
 				0D7D399F234363190048F930 /* ConfirmPlaceOrderViewController.xib in Resources */,
+				0471A1A523F9463C00953853 /* DashboardItemCollectionViewCell.xib in Resources */,
 				B1321F57234DE5350059B1FD /* PDFPageViewController.xib in Resources */,
 				0D7D39B12343701C0048F930 /* AboutViewController.xib in Resources */,
 				0D39751123421B0400DD9E15 /* HomeViewController.xib in Resources */,
@@ -819,6 +837,7 @@
 				0D7D39AC2343701C0048F930 /* LoginViewController.swift in Sources */,
 				0D7D399A2343521D0048F930 /* AddCartTableViewCell.swift in Sources */,
 				0D731A6D233F25EC00CFC89C /* StringConstant.swift in Sources */,
+				0471A1A823F949F300953853 /* BookCategoryModel.swift in Sources */,
 				0DEE878C233F1A9A001D5ABE /* JTSAnimatedGIFUtility.m in Sources */,
 				0DEE8777233F16D7001D5ABE /* UIView+LoadNib.m in Sources */,
 				0D39751F23421B6D00DD9E15 /* SliderCollectionCell.swift in Sources */,
@@ -845,6 +864,7 @@
 				B18D390123446CAC008CF6D0 /* AuthorBooksCollectionCell.swift in Sources */,
 				0D7AAD5F2341BFE100528554 /* SearchViewController.swift in Sources */,
 				0D731A6A233F222D00CFC89C /* SplashViewController.swift in Sources */,
+				0471A1A423F9463C00953853 /* DashboardItemCollectionViewCell.swift in Sources */,
 				0DB160A3234201B90087C4E8 /* AuthorCollectionViewCell.swift in Sources */,
 				B132901A23548A4D0044B8A1 /* PDFPageViewController.swift in Sources */,
 				0D39752123421B6D00DD9E15 /* HomeBooksCollectionCell.swift in Sources */,

@@ -21,6 +21,7 @@ class HomeBooksCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         vwBackground.layer.cornerRadius = 5.0
         vwBackground.layer.masksToBounds = true
+        THelper.setShadow(view: imgBookCover)
     }
 
 }

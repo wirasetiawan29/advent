@@ -10,43 +10,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="HomeBooksCollectionCell" customModule="Advent" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="230"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DashboardCell" id="gTV-IL-0wX" customClass="DashboardItemCollectionViewCell" customModule="Advent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="150" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-Is-Key">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="230"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-Qk-gUe" customClass="ThemeImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-Qk-gUe" customClass="ThemeImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="gs0-Tm-4B9"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="type">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-ra-GBH">
-                                <rect key="frame" x="4" y="168" width="142" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-iV-6bq">
-                                <rect key="frame" x="4" y="189" width="142" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31N-qt-95r">
+                                <rect key="frame" x="0.0" y="94" width="150" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pendidikan Kesehatan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-ra-GBH">
+                                <rect key="frame" x="8" y="94" width="134" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="type">
@@ -59,14 +49,16 @@
                         <constraints>
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="centerX" secondItem="eRw-Is-Key" secondAttribute="centerX" id="1Mo-t9-ggc"/>
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" id="29M-Wd-QTH"/>
-                            <constraint firstItem="MI6-iV-6bq" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="4" id="7m0-CN-0qK"/>
-                            <constraint firstItem="yBY-ra-GBH" firstAttribute="top" secondItem="T4M-Qk-gUe" secondAttribute="bottom" constant="8" id="IdS-VI-xTH"/>
+                            <constraint firstAttribute="bottom" secondItem="T4M-Qk-gUe" secondAttribute="bottom" id="4FM-vf-PUW"/>
+                            <constraint firstItem="31N-qt-95r" firstAttribute="top" secondItem="yBY-ra-GBH" secondAttribute="top" id="BJ5-Xq-42n"/>
+                            <constraint firstAttribute="bottom" secondItem="yBY-ra-GBH" secondAttribute="bottom" constant="8" id="DkI-Kp-QNP"/>
                             <constraint firstAttribute="trailing" secondItem="T4M-Qk-gUe" secondAttribute="trailing" id="Kjv-rO-6vb"/>
-                            <constraint firstItem="MI6-iV-6bq" firstAttribute="top" secondItem="yBY-ra-GBH" secondAttribute="bottom" constant="4" id="Pou-oK-kVB"/>
-                            <constraint firstAttribute="trailing" secondItem="yBY-ra-GBH" secondAttribute="trailing" constant="4" id="dMX-vJ-e0Y"/>
-                            <constraint firstAttribute="trailing" secondItem="MI6-iV-6bq" secondAttribute="trailing" constant="4" id="e4J-di-uLx"/>
+                            <constraint firstItem="31N-qt-95r" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" id="Naf-KX-xLh"/>
+                            <constraint firstAttribute="trailing" secondItem="yBY-ra-GBH" secondAttribute="trailing" constant="8" id="dMX-vJ-e0Y"/>
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="top" secondItem="eRw-Is-Key" secondAttribute="top" id="j6g-lI-UKt"/>
-                            <constraint firstItem="yBY-ra-GBH" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="4" id="jM7-fe-rUv"/>
+                            <constraint firstItem="yBY-ra-GBH" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="8" id="jM7-fe-rUv"/>
+                            <constraint firstAttribute="trailing" secondItem="31N-qt-95r" secondAttribute="trailing" id="nG9-Mp-2Mr"/>
+                            <constraint firstAttribute="bottom" secondItem="31N-qt-95r" secondAttribute="bottom" id="wDv-AB-01L"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,15 +72,12 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="151" height="238"/>
             <connections>
-                <outlet property="imgBookCover" destination="T4M-Qk-gUe" id="XYa-6g-xht"/>
-                <outlet property="lblBookName" destination="yBY-ra-GBH" id="Rh6-ue-FiJ"/>
-                <outlet property="lblBookPrice" destination="MI6-iV-6bq" id="p18-8P-B88"/>
-                <outlet property="vwBackground" destination="eRw-Is-Key" id="klb-aE-vIz"/>
+                <outlet property="backgroundGradient" destination="31N-qt-95r" id="yKO-2o-cVe"/>
+                <outlet property="imgBookCover" destination="T4M-Qk-gUe" id="71A-nC-94d"/>
+                <outlet property="lblBookName" destination="yBY-ra-GBH" id="dTt-ga-6Kj"/>
+                <outlet property="vwBackground" destination="eRw-Is-Key" id="NrT-2n-vJl"/>
             </connections>
             <point key="canvasLocation" x="178.125" y="187.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="icoPlaceholder" width="138" height="103.5"/>
-    </resources>
 </document>

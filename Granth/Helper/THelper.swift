@@ -339,7 +339,7 @@ class THelper {
     class func setShadow(view:UIView) {
         view.layer.shadowColor   = UIColor.lightGray.cgColor;
         view.layer.shadowRadius  = 1.0;
-        view.layer.shadowOpacity = 0.5;
+        view.layer.shadowOpacity = 0.8;
         view.layer.shadowOffset  = CGSize(width: 1.0, height: 3.0);
         view.layer.masksToBounds = false;
     }
