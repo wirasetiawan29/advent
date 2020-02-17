@@ -30,12 +30,12 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31N-qt-95r">
-                                <rect key="frame" x="0.0" y="94" width="150" height="56"/>
+                                <rect key="frame" x="0.0" y="87" width="150" height="63"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pendidikan Kesehatan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-ra-GBH">
-                                <rect key="frame" x="8" y="94" width="134" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <rect key="frame" x="10" y="92" width="132" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -50,13 +50,13 @@
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="centerX" secondItem="eRw-Is-Key" secondAttribute="centerX" id="1Mo-t9-ggc"/>
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" id="29M-Wd-QTH"/>
                             <constraint firstAttribute="bottom" secondItem="T4M-Qk-gUe" secondAttribute="bottom" id="4FM-vf-PUW"/>
-                            <constraint firstItem="31N-qt-95r" firstAttribute="top" secondItem="yBY-ra-GBH" secondAttribute="top" id="BJ5-Xq-42n"/>
-                            <constraint firstAttribute="bottom" secondItem="yBY-ra-GBH" secondAttribute="bottom" constant="8" id="DkI-Kp-QNP"/>
+                            <constraint firstItem="31N-qt-95r" firstAttribute="top" secondItem="yBY-ra-GBH" secondAttribute="top" constant="-5" id="BJ5-Xq-42n"/>
+                            <constraint firstAttribute="bottom" secondItem="yBY-ra-GBH" secondAttribute="bottom" constant="10" id="DkI-Kp-QNP"/>
                             <constraint firstAttribute="trailing" secondItem="T4M-Qk-gUe" secondAttribute="trailing" id="Kjv-rO-6vb"/>
                             <constraint firstItem="31N-qt-95r" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" id="Naf-KX-xLh"/>
                             <constraint firstAttribute="trailing" secondItem="yBY-ra-GBH" secondAttribute="trailing" constant="8" id="dMX-vJ-e0Y"/>
                             <constraint firstItem="T4M-Qk-gUe" firstAttribute="top" secondItem="eRw-Is-Key" secondAttribute="top" id="j6g-lI-UKt"/>
-                            <constraint firstItem="yBY-ra-GBH" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="8" id="jM7-fe-rUv"/>
+                            <constraint firstItem="yBY-ra-GBH" firstAttribute="leading" secondItem="eRw-Is-Key" secondAttribute="leading" constant="10" id="jM7-fe-rUv"/>
                             <constraint firstAttribute="trailing" secondItem="31N-qt-95r" secondAttribute="trailing" id="nG9-Mp-2Mr"/>
                             <constraint firstAttribute="bottom" secondItem="31N-qt-95r" secondAttribute="bottom" id="wDv-AB-01L"/>
                         </constraints>

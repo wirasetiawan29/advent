@@ -13,6 +13,8 @@
 		0471A1A823F949F300953853 /* BookCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A1A723F949F300953853 /* BookCategoryModel.swift */; };
 		04C5ABF023DE8C720028D401 /* PaymentSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; };
 		04C5ABF123DE8C720028D401 /* PaymentSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04EABF3423FA784F00139489 /* RenunganListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EABF3223FA784F00139489 /* RenunganListViewController.swift */; };
+		04EABF3523FA784F00139489 /* RenunganListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EABF3323FA784F00139489 /* RenunganListViewController.xib */; };
 		0D2785272343483900F8312E /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2785252343483900F8312E /* AddToCartViewController.swift */; };
 		0D2785282343483900F8312E /* AddToCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2785262343483900F8312E /* AddToCartViewController.xib */; };
 		0D2B1EA72350541100C52481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B1EA62350541100C52481 /* Assets.xcassets */; };
@@ -161,6 +163,8 @@
 		0471A1A323F9463C00953853 /* DashboardItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		0471A1A723F949F300953853 /* BookCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryModel.swift; sourceTree = "<group>"; };
 		04C5ABEE23DE8BAB0028D401 /* PaymentSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaymentSDK.framework; sourceTree = "<group>"; };
+		04EABF3223FA784F00139489 /* RenunganListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenunganListViewController.swift; sourceTree = "<group>"; };
+		04EABF3323FA784F00139489 /* RenunganListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RenunganListViewController.xib; sourceTree = "<group>"; };
 		0D2785252343483900F8312E /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		0D2785262343483900F8312E /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
 		0D2B1EA62350541100C52481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				B19D37782348C919003ED1CB /* ForgotPasswordViewController.xib */,
 				B19D377C2348C964003ED1CB /* ReViewViewController.swift */,
 				B19D377B2348C963003ED1CB /* ReViewViewController.xib */,
+				04EABF3223FA784F00139489 /* RenunganListViewController.swift */,
+				04EABF3323FA784F00139489 /* RenunganListViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				0D82D976233F55DF00BDB6F9 /* WalkthroughCollectionCell.xib in Resources */,
 				040AA22523F29E7300F16156 /* GoogleService-Info.plist in Resources */,
 				0D723FA32345FDD80075CD34 /* TransactionCollectionViewCell.xib in Resources */,
+				04EABF3523FA784F00139489 /* RenunganListViewController.xib in Resources */,
 				0D7989A5234715CD007B28B8 /* SearchCollectionViewCell.xib in Resources */,
 				0D731A7A233F416F00CFC89C /* googlesansbold.ttf in Resources */,
 				0D731A7B233F416F00CFC89C /* googlesansregular.ttf in Resources */,
@@ -854,6 +861,7 @@
 				0DEE8776233F16D7001D5ABE /* ThemeImageView.m in Sources */,
 				0DEE876F233F16D7001D5ABE /* ThemeLabel.m in Sources */,
 				0D7D39B22343701C0048F930 /* ChangePasswordViewController.swift in Sources */,
+				04EABF3423FA784F00139489 /* RenunganListViewController.swift in Sources */,
 				0D82D975233F55DF00BDB6F9 /* WalkthroughCollectionCell.swift in Sources */,
 				0DEE876D233F16D7001D5ABE /* ThemeView.m in Sources */,
 				0D39751C23421B6D00DD9E15 /* BookCategoryCollectionCell.swift in Sources */,

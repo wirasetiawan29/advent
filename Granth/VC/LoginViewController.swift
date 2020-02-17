@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
                print(TPreferences.readString(USER_ID) ?? "")
                let tabBarController = UITabBarController()
                let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
-               let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+               let tabViewController2 = RenunganListViewController(nibName: "RenunganListViewController", bundle: nil)
                let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
                let controllers = [tabViewController1, tabViewController2, tabViewController3]
                tabBarController.viewControllers = controllers
@@ -249,7 +249,7 @@ class LoginViewController: UIViewController {
                         print(TPreferences.readString(USER_ID) ?? "")
                         let tabBarController = UITabBarController()
                         let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
-                        let tabViewController2 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                        let tabViewController2 = RenunganListViewController(nibName: "RenunganListViewController", bundle: nil)
                         let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
                         let controllers = [tabViewController1, tabViewController2, tabViewController3]
                         tabBarController.viewControllers = controllers
