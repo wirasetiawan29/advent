@@ -116,7 +116,7 @@ class LoginViewController: UIViewController {
                let tabBarController = UITabBarController()
                let tabViewController1 = HomeViewController(nibName: "HomeViewController", bundle: nil)
                let tabViewController2 = RenunganListViewController(nibName: "RenunganListViewController", bundle: nil)
-               let tabViewController3 = HomeViewController(nibName: "HomeViewController", bundle: nil)
+               let tabViewController3 = SiwonListViewController(nibName: "SiwonListViewController", bundle: nil)
                let controllers = [tabViewController1, tabViewController2, tabViewController3]
                tabBarController.viewControllers = controllers
 

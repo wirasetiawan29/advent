@@ -534,35 +534,7 @@ class RenunganListViewController: UIViewController, UICollectionViewDelegate, UI
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func btnViewAllNewestBooks_Clicked(_ sender: Any) {
-        let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
-        vc.StrHeader = LanguageLocal.myLocalizedString(key: "TOP_SEARCH_BOOKS")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 
-    @IBAction func btnViewAllPopularBooks_Clicked(_ sender: Any) {
-        let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
-        vc.StrHeader = LanguageLocal.myLocalizedString(key: "POPULAR_BOOKS")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    @IBAction func btnViewAllRecommended_Clicked(_ sender: Any) {
-        let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
-        vc.StrHeader = LanguageLocal.myLocalizedString(key: "RECOMMANDED_BOOKS")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    @IBAction func btnViewAllTopSelling_Clicked(_ sender: Any) {
-        let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
-        vc.StrHeader = LanguageLocal.myLocalizedString(key: "TOP_SELLING_BOOKS")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    @IBAction func btnViewAllAuthor_Clicked(_ sender: Any) {
-        let vc = AutorsListViewController(nibName: "AutorsListViewController", bundle: nil)
-        vc.StrHeader = LanguageLocal.myLocalizedString(key: "BEST_AUTHORS")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 
     @IBAction func btnMic_Clicked(_ sender: Any) {
         vwBackground.isHidden = false
@@ -575,24 +547,6 @@ class RenunganListViewController: UIViewController, UICollectionViewDelegate, UI
         } else {
             startRecording()
         }
-    }
-
-    @IBAction func btnSpeachSearch_Clicked(_ sender: Any) {
-        self.vwBackground.isHidden = true
-//        self.vwSpeach.isHidden = true
-
-        audioEngine.stop()
-        request?.endAudio()
-        btnMic.isEnabled = true
-
-        let vc = SearchViewController(nibName: "SearchViewController", bundle: nil)
-//        if self.lblSpeach.text == "Say something, I'm listening!" {
-//            vc.strSearch = ""
-//        }
-//        else {
-//            vc.strSearch = "\(self.lblSpeach.text ?? "")"
-//        }
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     //MARK:-
