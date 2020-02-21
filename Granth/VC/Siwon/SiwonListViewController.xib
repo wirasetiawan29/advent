@@ -10,7 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SiwonListViewController" customModule="Advent" customModuleProvider="target">
             <connections>
+                <outlet property="buttonMenu" destination="0ya-2B-wsw" id="3xG-nI-xgT"/>
                 <outlet property="headerView" destination="RxC-8W-f0M" id="5V4-jF-1uP"/>
+                <outlet property="lblTotalCartItem" destination="nm1-3C-7Nl" id="Nxf-wv-cGc"/>
+                <outlet property="loadingIndicator" destination="fk1-Fb-gI9" id="ixR-oF-QCA"/>
                 <outlet property="tableView" destination="CNz-pF-y7Q" id="cAz-LE-QqU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,6 +55,9 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQB-DS-1ey">
                                     <rect key="frame" x="56" y="0.0" width="254" height="40"/>
+                                    <connections>
+                                        <action selector="btnSearch_Clicked:" destination="-1" eventType="touchUpInside" id="Jl1-Vp-I9m"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,6 +89,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                             <state key="normal" image="icoCart"/>
+                            <connections>
+                                <action selector="btnCart_Clicked:" destination="-1" eventType="touchUpInside" id="4M5-CQ-tmC"/>
+                            </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm1-3C-7Nl">
                             <rect key="frame" x="386" y="4" width="20" height="20"/>
@@ -116,11 +125,16 @@
                         <outlet property="delegate" destination="-1" id="gse-ae-hAU"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fk1-Fb-gI9">
+                    <rect key="frame" x="197" y="475" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="CNz-pF-y7Q" firstAttribute="top" secondItem="RxC-8W-f0M" secondAttribute="bottom" constant="8" id="4nD-A5-nKK"/>
+                <constraint firstItem="fk1-Fb-gI9" firstAttribute="centerX" secondItem="CNz-pF-y7Q" secondAttribute="centerX" id="75t-Q8-s55"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CNz-pF-y7Q" secondAttribute="bottom" id="EHK-lW-z0y"/>
+                <constraint firstItem="fk1-Fb-gI9" firstAttribute="centerY" secondItem="CNz-pF-y7Q" secondAttribute="centerY" id="FRC-1o-8bW"/>
                 <constraint firstItem="RxC-8W-f0M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MiE-9L-h8V"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RxC-8W-f0M" secondAttribute="trailing" id="UzC-zO-Hxx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CNz-pF-y7Q" secondAttribute="trailing" id="W0t-fM-CcA"/>
