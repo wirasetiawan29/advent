@@ -32,8 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.primaryColor()
-        UIApplication.shared.statusBarView?.tintColor = .white
+//        UIApplication.shared.statusBarView?.backgroundColor = UIColor.primaryColor()
+//        UIApplication.shared.statusBarView?.tintColor = .white
+
+        if #available(iOS 13.0, *) {
+
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = UIColor.red
+        }
 
         GIDSignIn.sharedInstance().clientID = "843220621492-p4gsdrelqhhce6kgomjq60kfu4r6gb4m.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
@@ -63,8 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
-        
-        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentSandbox: "\(TPreferences.readString(PAYPAL_CLIENT_ID) ?? "")"])
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         FirebaseApp.configure()

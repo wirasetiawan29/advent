@@ -4,10 +4,10 @@
 
 import UIKit
 import Alamofire
-import PaymentSDK
+//import PaymentSDK
 import GoogleMobileAds
 
-class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PayPalPaymentDelegate, PayPalFuturePaymentDelegate, PayPalProfileSharingDelegate, PGTransactionDelegate, GADBannerViewDelegate {
+class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GADBannerViewDelegate {
 
 //        MARK:-
 //        MARK:- Outlets
@@ -50,8 +50,6 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
     var arrCart = NSArray()
     var strPaymentType = String()
     
-    var payPalConfig = PayPalConfiguration()
-    
     var bannerView: GADBannerView!
     
     struct Checksum {
@@ -70,16 +68,6 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
     
     var cs = Checksum()
     
-    //Set environment connection.
-    
-    var environment:String = PayPalEnvironmentSandbox {
-        willSet(newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnect(withEnvironment: newEnvironment)
-            }
-        }
-    }
-    
 //        MARK:-
 //        MARK:- UIView Life Cycle.
     
@@ -90,7 +78,6 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        PayPalMobile.preconnect(withEnvironment: environment)
     }
     
 //        MARK:-
@@ -145,9 +132,7 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap( _:)))
         vwPopUpBackground.addGestureRecognizer(tap)
-        
-        //Configure the marchant
-        self.configurePaypal(strMarchantName: "test")
+
         
         if IPAD {
             bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
@@ -263,189 +248,78 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 280)
     }
-    
-    func acceptCreditCards() -> Bool {
-        return self.payPalConfig.acceptCreditCards
-    }
-    
-    func setAcceptCreditCards(acceptCreditCards: Bool) {
-        self.payPalConfig.acceptCreditCards = self.acceptCreditCards()
-    }
-    
-    //Configure paypal and set Marchant Name
-    
-    func configurePaypal(strMarchantName:String) {
-        // Set up payPalConfig
-        payPalConfig.acceptCreditCards = false
-        payPalConfig.merchantName = strMarchantName
-        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
-        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
-        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
-        payPalConfig.payPalShippingAddressOption = .payPal;
-        print("PayPal iOS SDK Version: \(PayPalMobile.libraryVersion())")
-    }
-    
-    //MARK:-
-    //MARK:-PayPalPayment methods
-    
-    func beginPayPalPayment() {
-        let arrItem = NSMutableArray()
-        var dicItem = NSDictionary()
-        
-        for i in 0..<arrCart.count {
-            dicItem = arrCart[i] as! NSDictionary
-            arrItem.add(PayPalItem(name: "\(dicItem.value(forKey: NAME) ?? "")", withQuantity: 1, withPrice: NSDecimalNumber(string: "\(dicItem.value(forKey: PRICE) ?? "")"), withCurrency: "USD", withSku: ""))
-        }
-        
-        let items = arrItem
-        let subtotal = PayPalItem.totalPrice(forItems: items as! [Any])
-        
-        // Optional: include payment details
-        let shipping = NSDecimalNumber(string: "0.00")
-        let tax = NSDecimalNumber(string: "0.00")
-        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-        
-        let total = subtotal.adding(shipping).adding(tax)
-        
-        let payment = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "Grunth", intent: .sale)
-        
-        payment.items = items as? [Any]
-        payment.paymentDetails = paymentDetails
-        
-        if (payment.processable) {
-            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-            present(paymentViewController!, animated: true, completion: nil)
-        }
-        else {
-            print("Payment not processalbe: \(payment)")
-        }
-    }
-    
-    //MARK:-
-    //MARK:-PayPalPaymentDelegate methods
-    
-    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        print("PayPal Payment Cancelled")
-        paymentViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
-        print("PayPal Payment Success !")
-        paymentViewController.dismiss(animated: true, completion: { () -> Void in
-            // send completed confirmaion to your server
-            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
-            
-            self.saveTransactionAPI()
-        })
-    }
-    
-    
-    // MARK: Future Payments
-    
-    @IBAction func authorizeFuturePaymentsAction(_ sender: AnyObject) {
-        let futurePaymentViewController = PayPalFuturePaymentViewController(configuration: payPalConfig, delegate: self)
-        present(futurePaymentViewController!, animated: true, completion: nil)
-    }
-    
-    func payPalFuturePaymentDidCancel(_ futurePaymentViewController: PayPalFuturePaymentViewController) {
-        print("PayPal Future Payment Authorization Canceled")
-        futurePaymentViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func payPalFuturePaymentViewController(_ futurePaymentViewController: PayPalFuturePaymentViewController, didAuthorizeFuturePayment futurePaymentAuthorization: [AnyHashable: Any]) {
-        print("PayPal Future Payment Authorization Success!")
-        // send authorization to your server to get refresh token.
-        futurePaymentViewController.dismiss(animated: true, completion: { () -> Void in
-        })
-    }
-    
-    // PayPalProfileSharingDelegate
-    
-    func userDidCancel(_ profileSharingViewController: PayPalProfileSharingViewController) {
-        print("PayPal Profile Sharing Authorization Canceled")
-        profileSharingViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func payPalProfileSharingViewController(_ profileSharingViewController: PayPalProfileSharingViewController, userDidLogInWithAuthorization profileSharingAuthorization: [AnyHashable: Any]) {
-        print("PayPal Profile Sharing Authorization Success!")
-        
-        // send authorization to your server
-        
-        profileSharingViewController.dismiss(animated: true, completion: { () -> Void in
-        })
-        
-    }
+
     
     //MARK:-
     //MARK:- Paytm payment
     
     func beginPaytmPayment() {
     
-        let type :ServerType = .eServerTypeStaging
-        let order = PGOrder(orderID: "", customerID: "", amount: "", eMail: "", mobile: "")
-        order.params = ["MID": cs.MID,
-                        "ORDER_ID": cs.ORDER_ID,
-                        "CUST_ID": cs.CUST_ID,
-                        "MOBILE_NO": cs.MOBILE_NO,
-                        "EMAIL": cs.EMAIL,
-                        "CHANNEL_ID": cs.CHANNEL_ID,
-                        "WEBSITE": cs.WEBSITE,
-                        "TXN_AMOUNT": cs.TXN_AMOUNT,
-                        "INDUSTRY_TYPE_ID": cs.INDUSTRY_TYPE_ID,
-                        "CHECKSUMHASH": cs.CHECKSUMHASH,
-                        "CALLBACK_URL": cs.CALLBACK_URL]
-        
-        var txnController = PGTransactionViewController()
-        txnController =  txnController.initTransaction(for: order) as! PGTransactionViewController
-        txnController.title = "Paytm Payments"
-        txnController.setLoggingEnabled(true)
-        if(type != ServerType.eServerTypeNone) {
-            txnController.serverType = type;
-        } else {
-            return
-        }
-        txnController.merchant = PGMerchantConfiguration.defaultConfiguration()
-        txnController.delegate = self
-        navigationController?.pushViewController(txnController, animated: true)
+//        let type :ServerType = .eServerTypeStaging
+//        let order = PGOrder(orderID: "", customerID: "", amount: "", eMail: "", mobile: "")
+//        order.params = ["MID": cs.MID,
+//                        "ORDER_ID": cs.ORDER_ID,
+//                        "CUST_ID": cs.CUST_ID,
+//                        "MOBILE_NO": cs.MOBILE_NO,
+//                        "EMAIL": cs.EMAIL,
+//                        "CHANNEL_ID": cs.CHANNEL_ID,
+//                        "WEBSITE": cs.WEBSITE,
+//                        "TXN_AMOUNT": cs.TXN_AMOUNT,
+//                        "INDUSTRY_TYPE_ID": cs.INDUSTRY_TYPE_ID,
+//                        "CHECKSUMHASH": cs.CHECKSUMHASH,
+//                        "CALLBACK_URL": cs.CALLBACK_URL]
+//
+//        var txnController = PGTransactionViewController()
+//        txnController =  txnController.initTransaction(for: order) as! PGTransactionViewController
+//        txnController.title = "Paytm Payments"
+//        txnController.setLoggingEnabled(true)
+//        if(type != ServerType.eServerTypeNone) {
+//            txnController.serverType = type;
+//        } else {
+//            return
+//        }
+//        txnController.merchant = PGMerchantConfiguration.defaultConfiguration()
+//        txnController.delegate = self
+//        navigationController?.pushViewController(txnController, animated: true)
     }
     
     //this function triggers when transaction gets finished
-    func didFinishedResponse(_ controller: PGTransactionViewController, response responseString: String) {
-        let msg : String = responseString
-        var titlemsg : String = ""
-        if let data = responseString.data(using: String.Encoding.utf8) {
-            do {
-                if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] , jsonresponse.count > 0{
-                    titlemsg = jsonresponse["STATUS"] as? String ?? ""
-                }
-            } catch {
-                titlemsg = "Something went wrong"
-            }
-        }
-        let actionSheetController: UIAlertController = UIAlertController(title: titlemsg , message: msg, preferredStyle: .alert)
-        let cancelAction : UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
-            action -> Void in
-            if titlemsg == "Something went wrong" {
-                controller.navigationController?.popViewController(animated: true)
-            }
-            else {
-                self.saveTransactionAPI()
-            }
-        }
-        actionSheetController.addAction(cancelAction)
-        self.present(actionSheetController, animated: true, completion: nil)
-    }
+//    func didFinishedResponse(_ controller: PGTransactionViewController, response responseString: String) {
+//        let msg : String = responseString
+//        var titlemsg : String = ""
+//        if let data = responseString.data(using: String.Encoding.utf8) {
+//            do {
+//                if let jsonresponse = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] , jsonresponse.count > 0{
+//                    titlemsg = jsonresponse["STATUS"] as? String ?? ""
+//                }
+//            } catch {
+//                titlemsg = "Something went wrong"
+//            }
+//        }
+//        let actionSheetController: UIAlertController = UIAlertController(title: titlemsg , message: msg, preferredStyle: .alert)
+//        let cancelAction : UIAlertAction = UIAlertAction(title: "OK", style: .cancel) {
+//            action -> Void in
+//            if titlemsg == "Something went wrong" {
+//                controller.navigationController?.popViewController(animated: true)
+//            }
+//            else {
+//                self.saveTransactionAPI()
+//            }
+//        }
+//        actionSheetController.addAction(cancelAction)
+//        self.present(actionSheetController, animated: true, completion: nil)
+//    }
     
     //this function triggers when transaction gets cancelled
-    func didCancelTrasaction(_ controller : PGTransactionViewController) {
-        controller.navigationController?.popViewController(animated: true)
-    }
-    
-    //Called when a required parameter is missing.
-    func errorMisssingParameter(_ controller : PGTransactionViewController, error : NSError?) {
-        THelper.toast(error?.localizedFailureReason, vc: self)
-        controller.navigationController?.popViewController(animated: true)
-    }
+//    func didCancelTrasaction(_ controller : PGTransactionViewController) {
+//        controller.navigationController?.popViewController(animated: true)
+//    }
+//    
+//    //Called when a required parameter is missing.
+//    func errorMisssingParameter(_ controller : PGTransactionViewController, error : NSError?) {
+//        THelper.toast(error?.localizedFailureReason, vc: self)
+//        controller.navigationController?.popViewController(animated: true)
+//    }
 
     
 //        MARK:-
@@ -607,7 +481,7 @@ class ConfirmPlaceOrderViewController: UIViewController, UITableViewDelegate, UI
                         self.beginPaytmPayment()
                     }
                     else if self.strPaymentType == "Paypal" {
-                        self.beginPayPalPayment()
+                        
                     }
                 }
                 break

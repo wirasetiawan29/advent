@@ -55,7 +55,7 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
         if #available(iOS 11.0, *) {
             
         } else {
-            constraintHeaderTop.constant = UIApplication.shared.statusBarFrame.size.height
+//            constraintHeaderTop.constant = UIApplication.shared.statusBarFrame.size.height
         }
         
         if IPAD {

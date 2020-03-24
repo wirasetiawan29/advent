@@ -12,6 +12,5 @@
 #import "ThemeManager.h"
 #import "JTSImageInfo.h"
 #import "JTSImageViewController.h"
-#import "PayPalMobile.h"
 
 #endif /* Header_h */
