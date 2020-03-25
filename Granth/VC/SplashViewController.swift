@@ -42,9 +42,6 @@ class SplashViewController: UIViewController {
         tabViewController2.tabBarItem = UITabBarItem(title: "Renungan", image:UIImage(named: "iconText"), tag:2)
         tabViewController3.tabBarItem = UITabBarItem(title: "Lagu Sion", image:UIImage(named: "iconMusic"), tag:3)
         self.navigationController?.pushViewController(tabBarController, animated: true)
-
-//        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

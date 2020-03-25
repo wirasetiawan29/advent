@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SiwonListViewController" customModule="Advent" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SiwonListViewController" customModule="Penerbit_Advent_Indonesia" customModuleProvider="target">
             <connections>
                 <outlet property="buttonMenu" destination="0ya-2B-wsw" id="3xG-nI-xgT"/>
                 <outlet property="headerView" destination="RxC-8W-f0M" id="5V4-jF-1uP"/>
@@ -129,7 +129,7 @@
                     <rect key="frame" x="197" y="475" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="CNz-pF-y7Q" firstAttribute="top" secondItem="RxC-8W-f0M" secondAttribute="bottom" constant="8" id="4nD-A5-nKK"/>
                 <constraint firstItem="fk1-Fb-gI9" firstAttribute="centerX" secondItem="CNz-pF-y7Q" secondAttribute="centerX" id="75t-Q8-s55"/>

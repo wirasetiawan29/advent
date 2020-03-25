@@ -184,8 +184,8 @@ class RenunganListViewController: UIViewController, UICollectionViewDelegate, UI
     //MARK:- ScrollView method.
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let pageWidth = cvSlider.frame.size.width
-//        pageControl.currentPage = Int(cvSlider.contentOffset.x / pageWidth)
+        //        let pageWidth = cvSlider.frame.size.width
+        //        pageControl.currentPage = Int(cvSlider.contentOffset.x / pageWidth)
     }
 
     //MARK:-

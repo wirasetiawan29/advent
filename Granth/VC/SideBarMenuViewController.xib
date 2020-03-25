@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideBarMenuViewController" customModule="Granth" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideBarMenuViewController" customModule="Penerbit_Advent_Indonesia" customModuleProvider="target">
             <connections>
                 <outlet property="ConstraintSideMenuHeight" destination="90s-cb-jaX" id="3bM-5d-Cjn"/>
                 <outlet property="constraintHeaderTop" destination="WSY-jK-4wh" id="PSk-px-V2F"/>
@@ -133,13 +133,14 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.01176470588" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="JbA-jH-iSM" secondAttribute="bottom" id="1yW-o0-Tvg"/>
                 <constraint firstItem="JbA-jH-iSM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WSY-jK-4wh"/>
                 <constraint firstItem="JbA-jH-iSM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ge0-tn-R2I"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JbA-jH-iSM" secondAttribute="trailing" id="jgm-9R-XT4"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="155"/>
         </view>

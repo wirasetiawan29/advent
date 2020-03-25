@@ -50,17 +50,17 @@ class SiwonListViewController : UIViewController, UITableViewDelegate, UITableVi
         }
 
         if TPreferences.readBoolean(IS_LOGINING) {
-                   self.lblTotalCartItem.isHidden = false
-                   self.lblTotalCartItem.layer.cornerRadius = self.lblTotalCartItem.layer.frame.height / 2
-                   self.lblTotalCartItem.text = TPreferences.readString(CART_TOTAL_ITEM)
-                   if self.lblTotalCartItem.text == "" {
-                       self.lblTotalCartItem.isHidden = true
-                   }else {
-                       self.lblTotalCartItem.isHidden = false
-                   }
-               }else {
-                   self.lblTotalCartItem.isHidden = true
-               }
+            self.lblTotalCartItem.isHidden = false
+            self.lblTotalCartItem.layer.cornerRadius = self.lblTotalCartItem.layer.frame.height / 2
+            self.lblTotalCartItem.text = TPreferences.readString(CART_TOTAL_ITEM)
+            if self.lblTotalCartItem.text == "" {
+                self.lblTotalCartItem.isHidden = true
+            }else {
+                self.lblTotalCartItem.isHidden = false
+            }
+        }else {
+            self.lblTotalCartItem.isHidden = true
+        }
 
 
         self.buttonMenu.addTarget(self.navigationController, action:#selector(showMenu) , for: .touchUpInside)
@@ -70,21 +70,21 @@ class SiwonListViewController : UIViewController, UITableViewDelegate, UITableVi
     }
 
     @objc func showMenu() {
-          let vc = SideBarMenuViewController(nibName: "SideBarMenuViewController", bundle: nil)
-          self.navigationController?.pushViewController(vc, animated: true)
+        let vc = SideBarMenuViewController(nibName: "SideBarMenuViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func receiveNotification(_ notification: Notification?) {
-           if let aNotification = notification {
-               print("\(aNotification)")
-           }
-           if TPreferences.readBoolean(IS_LOGINING) {
-               self.lblTotalCartItem.isHidden = false
-               self.lblTotalCartItem.text = TPreferences.readString(CART_TOTAL_ITEM)
-           }else {
-               self.lblTotalCartItem.isHidden = true
-           }
-       }
+        if let aNotification = notification {
+            print("\(aNotification)")
+        }
+        if TPreferences.readBoolean(IS_LOGINING) {
+            self.lblTotalCartItem.isHidden = false
+            self.lblTotalCartItem.text = TPreferences.readString(CART_TOTAL_ITEM)
+        }else {
+            self.lblTotalCartItem.isHidden = true
+        }
+    }
 
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -117,19 +117,19 @@ class SiwonListViewController : UIViewController, UITableViewDelegate, UITableVi
 
     //MARK: action function
     @IBAction func btnCart_Clicked(_ sender: Any) {
-            if TPreferences.readBoolean(IS_LOGINING) {
-                let vc = AddToCartViewController(nibName: "AddToCartViewController", bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }else {
-                let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-
-        @IBAction func btnSearch_Clicked(_ sender: Any) {
-            let vc = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        if TPreferences.readBoolean(IS_LOGINING) {
+            let vc = AddToCartViewController(nibName: "AddToCartViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+
+    @IBAction func btnSearch_Clicked(_ sender: Any) {
+        let vc = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 
 }

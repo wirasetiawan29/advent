@@ -12,13 +12,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var constraintHeaderTop: NSLayoutConstraint!
     @IBOutlet weak var constraintHeightSlider: NSLayoutConstraint!
-//    @IBOutlet weak var constraintCategoryList: NSLayoutConstraint!
-//    @IBOutlet weak var constraintHeightNewestBooks: NSLayoutConstraint!
-//    @IBOutlet weak var costraintHeightPopularBooks: NSLayoutConstraint!
-//    @IBOutlet weak var constraintHeightRecommanded: NSLayoutConstraint!
-//    @IBOutlet weak var constraintHeightTopSelling: NSLayoutConstraint!
-//    @IBOutlet weak var constraintHeightAuthors: NSLayoutConstraint!
-    
     @IBOutlet weak var lblTotalCartItem: UILabel!
     @IBOutlet weak var lblSpeach: UILabel!
     
@@ -32,18 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var vwSpeach: UIView!
     
     @IBOutlet weak var cvSlider: UICollectionView!
-//    @IBOutlet weak var cvCategory: UICollectionView!
     @IBOutlet weak var cvNewestBooks: UICollectionView!
-//    @IBOutlet weak var cvPopularBooks: UICollectionView!
-//    @IBOutlet weak var cvRecommendedBooks: UICollectionView!
-//    @IBOutlet weak var cvTopSellingBooks: UICollectionView!
-//    @IBOutlet weak var cvAuthors: UICollectionView!
-
-//    @IBOutlet weak var btnTopNewestViewAll: UIButton!
-//    @IBOutlet weak var btnPopularViewAll: UIButton!
-//    @IBOutlet weak var btnRecommandViewAll: UIButton!
-//    @IBOutlet weak var btnTopSellingViewAll: UIButton!
-//    @IBOutlet weak var btnBestAuthorViewAll: UIButton!
     @IBOutlet weak var btnMic: UIButton!
     
     @IBOutlet weak var vwBanner: UIView!
@@ -51,7 +33,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var arrSlider = NSArray()
     var arrBookCategories = NSArray()
-//    var arrNewestBooks = NSArray()
     var categoriesBook = [BookCategoryModel]()
     var arrPopularBooks = NSArray()
     var arrRecommendadBooks = NSArray()
@@ -82,12 +63,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             constraintHeaderTop.constant = UIApplication.shared.statusBarFrame.size.height
         }
-//        self.btnTopNewestViewAll.setTitle(LanguageLocal.myLocalizedString(key: "VIEW_ALL"), for: .normal)
-//        self.btnPopularViewAll.setTitle(LanguageLocal.myLocalizedString(key: "VIEW_ALL"), for: .normal)
-//        self.btnRecommandViewAll.setTitle(LanguageLocal.myLocalizedString(key: "VIEW_ALL"), for: .normal)
-//        self.btnTopSellingViewAll.setTitle(LanguageLocal.myLocalizedString(key: "VIEW_ALL"), for: .normal)
-//        self.btnBestAuthorViewAll.setTitle(LanguageLocal.myLocalizedString(key: "VIEW_ALL"), for: .normal)
-        
+
         if TPreferences.readBoolean(IS_LOGINING) {
             self.lblTotalCartItem.isHidden = false
             self.lblTotalCartItem.layer.cornerRadius = self.lblTotalCartItem.layer.frame.height / 2
@@ -209,23 +185,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView == cvSlider {
             self.startTimer()
             return arrSlider.count
-        }
-//        else if collectionView == cvCategory {
-//            return arrBookCategories.count
-//        }
-        else if collectionView == cvNewestBooks {
+        } else if collectionView == cvNewestBooks {
             return categoriesBook.count
-        }
-//        else if collectionView == cvPopularBooks {
-//            return arrPopularBooks.count
-//        }
-//        else if collectionView == cvRecommendedBooks {
-//            return arrRecommendadBooks.count
-//        }
-//        else if collectionView == cvTopSellingBooks {
-//            return arrTopSellingBooks.count
-//        }
-        else {
+        } else {
             return arrBestAuthors.count
         }
     }
@@ -241,141 +203,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             THelper.setImage(img: cell.imgSlider, url: URL(string: "\(dicSlider.value(forKey: SLIDE_IMAGE) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
             
             return cell;
-        }
-//        else if collectionView == cvCategory {
-//            self.cvCategory.register(UINib(nibName: "BookCategoryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
-//            let cell = cvCategory.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! BookCategoryCollectionCell
-//
-//            cell.lblCategory.layer.cornerRadius = 5.0
-//            cell.lblCategory.layer.borderWidth = 0.5
-////            cell.lblCategory.layer.borderColor = UIColor(hexString: arrColor[indexPath.item]).cgColor
-//            cell.lblCategory.layer.masksToBounds = true
-//
-//            let dicBookCategories: NSDictionary = arrBookCategories[indexPath.item] as! NSDictionary
-//            cell.lblCategory.text = "\(dicBookCategories.value(forKey: NAME) ?? "")"
-//            cell.lblCategory.text = cell.lblCategory.text! .uppercased()
-//
-//            cell.lblCategory.textColor = UIColor(hexString: arrColor[indexPath.item])
-//
-//            return cell;
-//        }
-        else {
+        } else {
             self.cvNewestBooks.register(UINib(nibName: "DashboardItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DashboardCell")
             let cell = cvNewestBooks.dequeueReusableCell(withReuseIdentifier: "DashboardCell", for: indexPath) as! DashboardItemCollectionViewCell
             
             let categoryModel: BookCategoryModel = categoriesBook[indexPath.item]
             cell.lblBookName.text = categoryModel.name
 
-
-//            
             THelper.setImage(img: cell.imgBookCover, url: URL(string: categoryModel.imageBackground)!, placeholderImage: categoryModel.imageBackground)
             let colors = UIImage(named: categoryModel.imageBackground)!.getColors()
             cell.backgroundGradient.backgroundColor = colors?.background
-//            
-//            cell.lblBookName.text = "\(dicNewBooks.value(forKey: NAME) ?? "")"
-//            cell.lblBookPrice.text = "\(PRICE_SIGN) \(dicNewBooks.value(forKey: PRICE) ?? "")"
-//            
             THelper.setShadow(view: cell)
             return cell;
         }
-//        else if collectionView == cvPopularBooks {
-//            self.cvPopularBooks.register(UINib(nibName: "HomeBooksCollectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-//            let cell = cvPopularBooks.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeBooksCollectionCell
-//
-//            let dicPopularBooks: NSDictionary = arrPopularBooks[indexPath.item] as! NSDictionary
-//
-//            THelper.setImage(img: cell.imgBookCover, url: URL(string: "\(dicPopularBooks.value(forKey: FRONT_COVER) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
-//
-//            cell.lblBookName.text = "\(dicPopularBooks.value(forKey: NAME) ?? "")"
-//            cell.lblBookPrice.text = "\(PRICE_SIGN) \(dicPopularBooks.value(forKey: PRICE) ?? "")"
-//
-//            THelper.setShadow(view: cell)
-//            return cell;
-//        }
-//        else if collectionView == cvRecommendedBooks {
-//            self.cvRecommendedBooks.register(UINib(nibName: "HomeBooksCollectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-//            let cell = cvRecommendedBooks.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeBooksCollectionCell
-//
-//            let dicRecommendadBooks: NSDictionary = arrRecommendadBooks[indexPath.item] as! NSDictionary
-//
-//            THelper.setImage(img: cell.imgBookCover, url: URL(string: "\(dicRecommendadBooks.value(forKey: FRONT_COVER) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
-//
-//            cell.lblBookName.text = "\(dicRecommendadBooks.value(forKey: NAME) ?? "")"
-//            cell.lblBookPrice.text = "\(PRICE_SIGN) \(dicRecommendadBooks.value(forKey: PRICE) ?? "")"
-//
-//            THelper.setShadow(view: cell)
-//            return cell;
-//        }
-//        else if collectionView == cvTopSellingBooks {
-//            self.cvTopSellingBooks.register(UINib(nibName: "HomeBooksCollectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-//            let cell = cvTopSellingBooks.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeBooksCollectionCell
-//
-//            let dicTopSellingBooks: NSDictionary = arrTopSellingBooks[indexPath.item] as! NSDictionary
-//
-//            THelper.setImage(img: cell.imgBookCover, url: URL(string: "\(dicTopSellingBooks.value(forKey: FRONT_COVER) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
-//
-//            cell.lblBookName.text = "\(dicTopSellingBooks.value(forKey: NAME) ?? "")"
-//            cell.lblBookPrice.text = "\(PRICE_SIGN) \(dicTopSellingBooks.value(forKey: PRICE) ?? "")"
-//
-//            THelper.setShadow(view: cell)
-//            return cell;
-//        }
-//        else {
-//            self.cvAuthors.register(UINib(nibName: "HomeAuthorsCollectionCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-//            let cell = cvAuthors.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeAuthorsCollectionCell
-//
-//            let dicBestAuthors: NSDictionary = arrBestAuthors[indexPath.item] as! NSDictionary
-//
-//            THelper.setImage(img: cell.imgAuthorProfile, url: URL(string: "\(dicBestAuthors.value(forKey: IMAGE) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
-//
-//            cell.lblAuthorName.text = "\(dicBestAuthors.value(forKey: NAME) ?? "")"
-//
-//            return cell;
-//        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == cvSlider {
-        }
-//        else if collectionView == cvCategory {
-//            let dicBookCategories: NSDictionary = arrBookCategories[indexPath.item] as! NSDictionary
-//            let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
-//            vc.strCat_id = "\(dicBookCategories.value(forKey: CATEGORY_ID) ?? "")"
-//            vc.StrHeader = "\(dicBookCategories.value(forKey: NAME) ?? "")"
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else if collectionView == cvNewestBooks {
-//            let dicNewestBooks: NSDictionary = arrNewestBooks[indexPath.item] as! NSDictionary
-//            let vc = BookDetailViewController(nibName: "BookDetailViewController", bundle: nil)
-//            vc.strBookId = "\(dicNewestBooks.value(forKey: BOOK_ID) ?? "")"
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else if collectionView == cvPopularBooks {
-//            let dicPopularBooks: NSDictionary = arrPopularBooks[indexPath.item] as! NSDictionary
-//            let vc = BookDetailViewController(nibName: "BookDetailViewController", bundle: nil)
-//            vc.strBookId = "\(dicPopularBooks.value(forKey: BOOK_ID) ?? "")"
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else if collectionView == cvRecommendedBooks {
-//            let dicRecommendedBooks: NSDictionary = arrRecommendadBooks[indexPath.item] as! NSDictionary
-//            let vc = BookDetailViewController(nibName: "BookDetailViewController", bundle: nil)
-//            vc.strBookId = "\(dicRecommendedBooks.value(forKey: BOOK_ID) ?? "")"
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else if collectionView == cvTopSellingBooks {
-//            let dicTopSellingBooks: NSDictionary = arrTopSellingBooks[indexPath.item] as! NSDictionary
-//            let vc = BookDetailViewController(nibName: "BookDetailViewController", bundle: nil)
-//            vc.strBookId = "\(dicTopSellingBooks.value(forKey: BOOK_ID) ?? "")"
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//        else if collectionView == cvAuthors {
-//            let dicBestAuthors: NSDictionary = arrBestAuthors[indexPath.item] as! NSDictionary
-//            let vc = AuthorDetailViewController(nibName: "AuthorDetailViewController", bundle: nil)
-//            vc.AuthorName = "\(dicBestAuthors.value(forKey: NAME) ?? "")"
-//            vc.AuthorImage = "\(dicBestAuthors.value(forKey: IMAGE) ?? "")"
-//            vc.dicAuthorDetail = dicBestAuthors
-//            self.navigationController!.pushViewController(vc, animated: true)
-//        }
         let vc = ViewAllViewController(nibName: "ViewAllViewController", bundle: nil)
         vc.StrHeader = LanguageLocal.myLocalizedString(key: "TOP_SEARCH_BOOKS")
         self.navigationController?.pushViewController(vc, animated: true)
@@ -384,19 +227,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == cvSlider {
             return CGSize(width:cvSlider.frame.width , height: cvSlider.frame.height)
-        }
-//        else if collectionView == cvCategory {
-//            let label = UILabel(frame: CGRect.zero)
-//            let dicBookCategories: NSDictionary = arrBookCategories[indexPath.item] as! NSDictionary
-//            label.text = "\(dicBookCategories.value(forKey: NAME) ?? "")"
-//            label.sizeToFit()
-//
-//            return CGSize(width: label.intrinsicContentSize.width + 60, height: 50)
-//        }
-//        else if collectionView == cvAuthors {
-//            return CGSize(width:100 , height: 130)
-//        }
-        else {
+        } else {
             return CGSize(width:self.view.bounds.width/2 - 15, height: self.view.bounds.width/2)
         }
     }

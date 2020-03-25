@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmPlaceOrderViewController" customModule="Granth" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmPlaceOrderViewController" customModule="Penerbit_Advent_Indonesia" customModuleProvider="target">
             <connections>
                 <outlet property="btnClosePopup" destination="Ma2-kV-bJR" id="SkU-Ef-iUP"/>
                 <outlet property="btnCotinue" destination="5EX-5G-Bhb" id="JN6-Ag-QiE"/>
@@ -42,7 +40,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuZ-96-hdq">
-                    <rect key="frame" x="0.0" y="20" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="44" width="320" height="56"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMh-Wf-d7Q" customClass="ThemeButton">
                             <rect key="frame" x="8" y="8" width="40" height="40"/>
@@ -115,11 +113,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-ex-IuD">
-                    <rect key="frame" x="0.0" y="76" width="320" height="483"/>
+                    <rect key="frame" x="0.0" y="100" width="320" height="459"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qId-Ie-05J">
-                    <rect key="frame" x="0.0" y="76" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoCheck" translatesAutoresizingMaskIntoConstraints="NO" id="Ow4-Hc-z0a">
                             <rect key="frame" x="16" y="17.5" width="15" height="15"/>
@@ -186,10 +184,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-X8-Zjw">
-                    <rect key="frame" x="0.0" y="126" width="320" height="323"/>
+                    <rect key="frame" x="0.0" y="150" width="320" height="299"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtI-uv-6Ac">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="323"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReU-jA-ZBl">
                                     <rect key="frame" x="0.0" y="4" width="320" height="120"/>
@@ -383,7 +381,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibb-gj-Igh">
-                    <rect key="frame" x="0.0" y="20" width="320" height="489"/>
+                    <rect key="frame" x="0.0" y="44" width="320" height="465"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrB-ZY-DYZ">
@@ -442,7 +440,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.01176470588" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ibb-gj-Igh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="728-rK-Djt"/>
                 <constraint firstItem="kCZ-T7-oZd" firstAttribute="top" secondItem="Qqc-Rj-keN" secondAttribute="bottom" id="BEr-CY-j40"/>

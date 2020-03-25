@@ -30,33 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
-//        UIApplication.shared.statusBarView?.backgroundColor = UIColor.primaryColor()
-//        UIApplication.shared.statusBarView?.tintColor = .white
-
         if #available(iOS 13.0, *) {
-
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+             navBarAppearance.backgroundColor = .white
+            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).standardAppearance = navBarAppearance
+            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).scrollEdgeAppearance = navBarAppearance
         } else {
             let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = UIColor.red
+            statusBar?.backgroundColor = .white
+            statusBar?.tintColor = .white
         }
 
-        GIDSignIn.sharedInstance().clientID = "843220621492-p4gsdrelqhhce6kgomjq60kfu4r6gb4m.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
+
+        setUpGoogleSignIn()
+        checkWalkThrough()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if TPreferences.readBoolean(WALKTHROUGH) {
-            let vc = SplashViewController(nibName: "SplashViewController", bundle: nil)
-            navigationController = TNavigationViewController(rootViewController: vc)
-        }
-        else {
-            let vc = walkthroughViewController(nibName: "walkthroughViewController", bundle: nil)
-            navigationController = TNavigationViewController(rootViewController: vc)
-        }
-        TPreferences.writeString(UDID, value: UIDevice.current.identifierForVendor?.uuidString)
-        navigationController.isNavigationBarHidden = true
-    
+
+
         self.window? .makeKeyAndVisible()
         let menuController = SideBarMenuViewController(nibName: "SideBarMenuViewController", bundle: nil)
         
@@ -77,63 +68,82 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
         return true
     }
 
+    func setUpGoogleSignIn() {
+        GIDSignIn.sharedInstance().clientID = "843220621492-p4gsdrelqhhce6kgomjq60kfu4r6gb4m.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+    }
+
+    func checkWalkThrough() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+              if TPreferences.readBoolean(WALKTHROUGH) {
+                  let vc = SplashViewController(nibName: "SplashViewController", bundle: nil)
+                  navigationController = TNavigationViewController(rootViewController: vc)
+              }
+              else {
+                  let vc = walkthroughViewController(nibName: "walkthroughViewController", bundle: nil)
+                  navigationController = TNavigationViewController(rootViewController: vc)
+              }
+              TPreferences.writeString(UDID, value: UIDevice.current.identifierForVendor?.uuidString)
+              navigationController.isNavigationBarHidden = true
+    }
+
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-       if let error = error {
-           if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-               print("The user has not signed in before or they have since signed out.")
-           } else {
-               print("\(error.localizedDescription)")
-           }
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
 
-           NotificationCenter.default.post(
-               name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
-           return
-       }
-
-           let userId = user.userID
-           let idToken = user.authentication.idToken!
-           let fullName = user.profile.name
-           let givenName = user.profile.givenName
-           let familyName = user.profile.familyName
-           let email = user.profile.email
-           NotificationCenter.default.post(
-               name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-               object: nil,
-               userInfo: ["statusText": "Signed in user:\n\(fullName!)"])
-
-           print("Successfully logged into Google", user!)
-
-           guard let accessToken = user.authentication.accessToken else { return }
-           let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-
-           Auth.auth().signIn(with: credentials, completion: { (user, error) in
-               if let err = error {
-                   print("Failed to create a Firebase User with Google account: ", err)
-                   return
-               }
-
-               guard let uid = user?.additionalUserInfo else { return }
-               print("Successfully logged into Firebase with Google", uid)
-           })
-          }
-
-       func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-           return GIDSignIn.sharedInstance().handle(url)
-       }
-
-       func application(_ application: UIApplication,
-                         open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-          return GIDSignIn.sharedInstance().handle(url)
+            NotificationCenter.default.post(
+                name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+            return
         }
 
-       func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-                 withError error: Error!) {
-         NotificationCenter.default.post(
-           name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-           object: nil,
-           userInfo: ["statusText": "User has disconnected."])
+        _ = user.userID
+        let idToken = user.authentication.idToken!
+        let fullName = user.profile.name
+        _ = user.profile.givenName
+        _ = user.profile.familyName
+        _ = user.profile.email
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+            object: nil,
+            userInfo: ["statusText": "Signed in user:\n\(fullName!)"])
 
-       }
+        print("Successfully logged into Google", user!)
+
+        guard let accessToken = user.authentication.accessToken else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+
+        Auth.auth().signIn(with: credentials, completion: { (user, error) in
+            if let err = error {
+                print("Failed to create a Firebase User with Google account: ", err)
+                return
+            }
+
+            guard let uid = user?.additionalUserInfo else { return }
+            print("Successfully logged into Firebase with Google", uid)
+        })
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+            object: nil,
+            userInfo: ["statusText": "User has disconnected."])
+
+    }
     
     class func getDelegate() -> AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate

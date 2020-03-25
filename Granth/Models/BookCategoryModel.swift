@@ -13,7 +13,7 @@ class BookCategoryModel:NSObject {
     var imageBackground: String = ""
     var name: String = ""
 
-     init(bookId:Int!, imageBackground: String!, name: String!) {
+    init(bookId:Int!, imageBackground: String!, name: String!) {
         super.init()
         self.bookId = bookId
         self.imageBackground = imageBackground

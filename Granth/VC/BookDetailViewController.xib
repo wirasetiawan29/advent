@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookDetailViewController" customModule="Granth" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookDetailViewController" customModule="Penerbit_Advent_Indonesia" customModuleProvider="target">
             <connections>
                 <outlet property="VwYourReview" destination="g8r-p3-YfT" id="iNC-8e-1Vu"/>
                 <outlet property="bookHeaderContainerView" destination="2Pd-8M-vso" id="HXa-25-pS4"/>
@@ -62,7 +62,7 @@
                             <rect key="frame" x="0.0" y="8" width="452" height="196.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Easiest Way to Understand Algebra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-9K-yZH" customClass="ThemeLabel">
-                                    <rect key="frame" x="18" y="15" width="426" height="20"/>
+                                    <rect key="frame" x="18" y="15" width="426" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -993,7 +993,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fOr-r7-5Kb" firstAttribute="top" secondItem="4Ht-HJ-9Xy" secondAttribute="bottom" id="0XQ-rx-jge"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qy8-9X-c3z" secondAttribute="trailing" id="0qz-Bz-oUf"/>

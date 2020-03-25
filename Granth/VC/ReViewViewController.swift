@@ -7,7 +7,7 @@ import Alamofire
 import GoogleMobileAds
 
 class ReViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
-
+    
     //        MARK:-
     //        MARK:- Outlets
     
@@ -35,7 +35,7 @@ class ReViewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         SetUpObject()
     }
-
+    
     //        MARK:-
     //        MARK:- SetUpObject Methods.
     

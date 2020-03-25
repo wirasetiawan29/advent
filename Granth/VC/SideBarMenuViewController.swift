@@ -7,19 +7,15 @@ import FCAlertView
 import StoreKit
 
 class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, FCAlertViewDelegate {
-   
+
     //MARK:-
     //MARK:- Outlet
     
     @IBOutlet weak var constraintHeaderTop: NSLayoutConstraint!
-    
     @IBOutlet weak var tblSideMenu: UITableView!
-    
     @IBOutlet weak var imgProfile: UIImageView!
-    
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblUserName: UILabel!
-    
     @IBOutlet weak var ConstraintSideMenuHeight: NSLayoutConstraint!
     //MARK:-
     //MARK:- variables
@@ -35,27 +31,22 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
     let arrImageSection1: NSArray = ["icoBookmark","icoHistory","icoKey","icoLogout"]
     let arrImageSection2: NSArray = ["icoShare", "icoStarOutline", "icoLock", "icoLock", "icoFeedBack", "icoInfo"]
     
-    
-    //MARK:-
+
     //MARK:- View Life Cycles
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setUpObject()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.setUpObject()
     }
-    
-    //MARK:-
+
     //MARK:- SetUpObject Method.
-    
     func setUpObject() {
         if #available(iOS 11.0, *) {
             
         } else {
-//            constraintHeaderTop.constant = UIApplication.shared.statusBarFrame.size.height
+            //            constraintHeaderTop.constant = UIApplication.shared.statusBarFrame.size.height
         }
         
         if IPAD {
@@ -92,9 +83,9 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK:-
     //MARK:- UITableView Delegate and Data Source Methods.
     func numberOfSections(in tableView: UITableView) -> Int {
-       if TPreferences.readBoolean(IS_LOGINING) {
+        if TPreferences.readBoolean(IS_LOGINING) {
             return arrSection.count
-       } else {
+        } else {
             return arrSec.count
         }
     }
@@ -131,7 +122,7 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
                 return 0
             }
         }
-       
+
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -233,7 +224,7 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
         if TPreferences.readBoolean(IS_LOGINING) {
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
-//                    let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
+                    //                    let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
                     AppDelegate.getDelegate()?.navigationController.popViewController(animated: true)
                     frostedViewController?.hideMenuViewController()
                 }
@@ -308,8 +299,6 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
         }else {
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
-//                    let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
-//                    AppDelegate.getDelegate()?.navigationController.pushViewController(vc, animated: true)
                     AppDelegate.getDelegate()?.navigationController.popViewController(animated: true)
                     frostedViewController?.hideMenuViewController()
                 }
@@ -320,9 +309,9 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
                 }else if indexPath.row == 1 {
                     
                 }else if indexPath.row == 2 {
-                   
+
                 }else if indexPath.row == 3 {
-                   
+
                 }else if indexPath.row == 4 {
                     let vc = FeedbackViewController(nibName: "FeedbackViewController", bundle: nil)
                     AppDelegate.getDelegate()?.navigationController.pushViewController(vc, animated: true)
@@ -350,24 +339,20 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
                 return LanguageLocal.myLocalizedString(key: "\(arrSec[section])")
             }
         }
-       
+
     }
-    
-    //MARK: -
+
     //MARK: - fcAlertDoneButtonClicked
-    
     func fcAlertDoneButtonClicked(_ alertView: FCAlertView?) {
         if alertView?.tag == 101 {
-           print("Logout")
+            print("Logout")
             TPreferences.writeBoolean(IS_LOGINING, value: false)
-             NotificationCenter.default.post(name: NSNotification.Name("REMOVE_TOTAL"), object: self, userInfo: ["flag":"1"])
+            NotificationCenter.default.post(name: NSNotification.Name("REMOVE_TOTAL"), object: self, userInfo: ["flag":"1"])
             AppDelegate.getDelegate()?.navigationController.popViewController(animated: true)
         }
     }
-    
-    //MARK:-
+
     //MARK:- UIButton Action Methods
-    
     @IBAction func btnProfile_Clicked(_ sender: Any) {
         if TPreferences.readBoolean(IS_LOGINING) {
             let vc = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
