@@ -17,19 +17,19 @@ WELCOME_MSG = "Welcome to eBooks Spot";
 // SideMenu
 SETTINGS = " Settings";
 APP = " App";
-DASHBOARD = "DashBoard";
-MY_LIBRARY = "My Library";
-MY_CART = "My Cart";
-WISHLIST = "WishList";
-TRANSCATION_HISTORY = "Transcation History";
-CHANGE_PASSWORD = "Change Password";
-LOGOUT = "Logout";
-SHARE_APP = "Share App";
+DASHBOARD = "Beranda";
+MY_LIBRARY = "Buku Saya";
+MY_CART = "Keranjang";
+WISHLIST = "Favorit";
+TRANSCATION_HISTORY = "Riwayat Transaksi";
+CHANGE_PASSWORD = "Ubah Kata Sandi";
+LOGOUT = "Keluar";
+SHARE_APP = "Bagikan Aplikasi";
 RATE_APP = "Rate App";
 PRIVACY_POLICY = "Privacy Policy";
 TERM_AND_CONDITION = "Term And Condition";
 FEEDBACK = "Feedback";
-INFO = "About App";
+INFO = "Tentang Aplikasi";
 
 //SearchView.
 
@@ -59,14 +59,14 @@ TOTAL_AMOUNT = "Total Amount : ";
 TOTAL = "Total";
 CONTINUE = "Coutinue";
 
-LOGIN = "Login";
+LOGIN = "LOGIN";
 
 // Change Password
 CHANGE_PASSWORD = "change Password";
 
 // Transaction History
 TRANSACTION_HISTORY = "Transaction History";
-MY_LIBRARY = "My Library";
+MY_LIBRARY = "Buku Saya";
 
 // Place Order View.
 PLACE_ORDER = "Place Order";

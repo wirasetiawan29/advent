@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041626CD24050FF400466FAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041626CC24050FF400466FAF /* GoogleService-Info.plist */; };
 		044B80E523FCE4B9003F8945 /* SiwonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B80E323FCE4B9003F8945 /* SiwonListViewController.swift */; };
 		044B80E623FCE4B9003F8945 /* SiwonListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B80E423FCE4B9003F8945 /* SiwonListViewController.xib */; };
 		044B80E823FCE56B003F8945 /* SiwonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B80E723FCE56B003F8945 /* SiwonModels.swift */; };
@@ -22,6 +21,7 @@
 		0471A1A823F949F300953853 /* BookCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471A1A723F949F300953853 /* BookCategoryModel.swift */; };
 		04EABF3423FA784F00139489 /* RenunganListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EABF3223FA784F00139489 /* RenunganListViewController.swift */; };
 		04EABF3523FA784F00139489 /* RenunganListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EABF3323FA784F00139489 /* RenunganListViewController.xib */; };
+		04F35D3B24DD47EE00339572 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04F35D3A24DD47EE00339572 /* GoogleService-Info.plist */; };
 		0D2785272343483900F8312E /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2785252343483900F8312E /* AddToCartViewController.swift */; };
 		0D2785282343483900F8312E /* AddToCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2785262343483900F8312E /* AddToCartViewController.xib */; };
 		0D2B1EA72350541100C52481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B1EA62350541100C52481 /* Assets.xcassets */; };
@@ -164,7 +164,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		041626CC24050FF400466FAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044B80E323FCE4B9003F8945 /* SiwonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiwonListViewController.swift; sourceTree = "<group>"; };
 		044B80E423FCE4B9003F8945 /* SiwonListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SiwonListViewController.xib; sourceTree = "<group>"; };
 		044B80E723FCE56B003F8945 /* SiwonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiwonModels.swift; sourceTree = "<group>"; };
@@ -179,6 +178,7 @@
 		0471A1A723F949F300953853 /* BookCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCategoryModel.swift; sourceTree = "<group>"; };
 		04EABF3223FA784F00139489 /* RenunganListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenunganListViewController.swift; sourceTree = "<group>"; };
 		04EABF3323FA784F00139489 /* RenunganListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RenunganListViewController.xib; sourceTree = "<group>"; };
+		04F35D3A24DD47EE00339572 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D2785252343483900F8312E /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewController.swift; sourceTree = "<group>"; };
 		0D2785262343483900F8312E /* AddToCartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCartViewController.xib; sourceTree = "<group>"; };
 		0D2B1EA62350541100C52481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 		0DEE87A0233F1B4D001D5ABE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				041626CC24050FF400466FAF /* GoogleService-Info.plist */,
+				04F35D3A24DD47EE00339572 /* GoogleService-Info.plist */,
 				0D2B1EA62350541100C52481 /* Assets.xcassets */,
 				0DAF86E9233F125F00A9FFD5 /* Info.plist */,
 				0DEE87A2233F1B76001D5ABE /* default_iPad.plist */,
@@ -762,7 +762,7 @@
 				0D7AAD602341BFE100528554 /* SearchViewController.xib in Resources */,
 				0D731A67233F1FAE00CFC89C /* SideBarMenuViewController.xib in Resources */,
 				0D7D39B7234376B80048F930 /* RegisterViewController.xib in Resources */,
-				041626CD24050FF400466FAF /* GoogleService-Info.plist in Resources */,
+				04F35D3B24DD47EE00339572 /* GoogleService-Info.plist in Resources */,
 				0D39751023421B0400DD9E15 /* BookDetailViewController.xib in Resources */,
 				0D731A6B233F222D00CFC89C /* SplashViewController.xib in Resources */,
 				0D723FA723460DD60075CD34 /* MyLibraryViewController.xib in Resources */,
@@ -1091,7 +1091,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P3NB86338F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1136,7 +1136,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = P3NB86338F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

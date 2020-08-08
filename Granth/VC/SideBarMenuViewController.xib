@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,9 +12,10 @@
             <connections>
                 <outlet property="ConstraintSideMenuHeight" destination="90s-cb-jaX" id="3bM-5d-Cjn"/>
                 <outlet property="constraintHeaderTop" destination="WSY-jK-4wh" id="PSk-px-V2F"/>
-                <outlet property="imgProfile" destination="Vbi-xA-Q4E" id="fry-fJ-ETe"/>
+                <outlet property="imgProfile" destination="Vbi-xA-Q4E" id="vuv-am-gWW"/>
                 <outlet property="lblEmail" destination="rm5-tA-FiV" id="RNC-ks-DsT"/>
                 <outlet property="lblUserName" destination="y6r-5x-l6E" id="Dkm-by-rMP"/>
+                <outlet property="loginLabel" destination="NTu-Yu-buj" id="E1B-YO-eWI"/>
                 <outlet property="tblSideMenu" destination="mYe-xZ-XQA" id="jvi-Ex-pcK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,8 +47,8 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr.Patel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-5x-l6E" customClass="ThemeLabel">
                                             <rect key="frame" x="116" y="37.5" width="196" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="type">
@@ -57,14 +58,20 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MrPatel@example.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-tA-FiV" customClass="ThemeLabel">
                                             <rect key="frame" x="116" y="66.5" width="196" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="type">
                                                     <integer key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTu-Yu-buj">
+                                            <rect key="frame" x="16" y="94" width="60.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUF-oe-iqP">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
@@ -73,7 +80,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="backgroundColor" red="0.0" green="0.011764705882352941" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="aUF-oe-iqP" secondAttribute="trailing" id="2sN-KW-ZNV"/>
                                         <constraint firstAttribute="trailing" secondItem="y6r-5x-l6E" secondAttribute="trailing" constant="8" id="3RX-UZ-sc0">
@@ -91,8 +98,10 @@
                                         <constraint firstItem="y6r-5x-l6E" firstAttribute="leading" secondItem="Vbi-xA-Q4E" secondAttribute="trailing" constant="8" id="QHa-to-R8N"/>
                                         <constraint firstAttribute="bottom" secondItem="Vbi-xA-Q4E" secondAttribute="bottom" constant="20" id="XIo-jK-KLU"/>
                                         <constraint firstItem="aUF-oe-iqP" firstAttribute="leading" secondItem="dxr-LO-3CH" secondAttribute="leading" id="XbA-VW-R0e"/>
+                                        <constraint firstAttribute="bottom" secondItem="NTu-Yu-buj" secondAttribute="bottom" constant="10" id="ZOn-75-xDg"/>
                                         <constraint firstItem="rm5-tA-FiV" firstAttribute="leading" secondItem="y6r-5x-l6E" secondAttribute="leading" id="a9p-Ph-UV5"/>
                                         <constraint firstItem="y6r-5x-l6E" firstAttribute="centerY" secondItem="Vbi-xA-Q4E" secondAttribute="centerY" constant="-10" id="gzX-SU-dC7"/>
+                                        <constraint firstItem="NTu-Yu-buj" firstAttribute="leading" secondItem="dxr-LO-3CH" secondAttribute="leading" constant="16" id="kQJ-va-cv1"/>
                                         <constraint firstItem="rm5-tA-FiV" firstAttribute="top" secondItem="y6r-5x-l6E" secondAttribute="bottom" constant="8" id="r4o-Zl-cXN">
                                             <variation key="heightClass=regular-widthClass=regular" constant="16"/>
                                         </constraint>

@@ -11,6 +11,8 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK:-
     //MARK:- Outlet
     
+
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var constraintHeaderTop: NSLayoutConstraint!
     @IBOutlet weak var tblSideMenu: UITableView!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -32,6 +34,11 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
     let arrImageSection2: NSArray = ["icoShare", "icoStarOutline", "icoLock", "icoLock", "icoFeedBack", "icoInfo"]
     
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +63,9 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         if TPreferences.readBoolean(IS_LOGINING) {
+            self.lblUserName.textColor = .white
+            self.lblEmail.textColor = .white
+            self.loginLabel.isHidden = true
             self.imgProfile.isHidden = false
             self.lblEmail.isHidden = false
             if IPAD {
@@ -73,9 +83,10 @@ class SideBarMenuViewController: UIViewController,UITableViewDelegate,UITableVie
             }
         }
         else {
+            self.loginLabel.isHidden = false
             self.imgProfile.isHidden = true
             self.lblEmail.isHidden = true
-            self.lblUserName.text = LanguageLocal.myLocalizedString(key: "LOGIN")
+            self.lblUserName.isHidden = true
         }
         tblSideMenu.reloadData()
     }

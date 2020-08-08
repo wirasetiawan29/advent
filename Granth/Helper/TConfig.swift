@@ -22,7 +22,7 @@ let SIZE_SMALL:Float = 12
 let SIZE_TINY:Float = 10
 
 //All color
-let PRIMARYCOLOR = "#FFFFFF"
+let PRIMARYCOLOR = "#000335"
 let SECONDARYCOLOR = "#AB26287F"
 let PRIMARYTEXTCOLOR = "#464545"
 let SECONDARYTEXTCOLOR = "#6e6e6e"
@@ -31,7 +31,8 @@ let VIEWALLCOLOR = "#888A8B"
 let COLORACCENT = "#ee4444"
 
 // Live
-let BASEURL = "https://dev.fathia.net/advent/api/"//Your Server URL here
+//let BASEURL = "https://dev.fathia.net/advent/api/"//Your Server URL here
+let BASEURL = "https://app.alkitabberkata.com/public/api/"//Your Server URL here
 
 let IPAD = UI_USER_INTERFACE_IDIOM() == .pad
 let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone

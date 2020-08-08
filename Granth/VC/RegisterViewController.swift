@@ -31,6 +31,11 @@ class RegisterViewController: UIViewController {
     
     //        MARK:-
 //        MARK:- View Life Cycles.
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

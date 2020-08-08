@@ -48,6 +48,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var strSearch = String()
     
     var bannerView: GADBannerView!
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -198,10 +202,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let cell = cvSlider.dequeueReusableCell(withReuseIdentifier: "SliderCell", for: indexPath) as! SliderCollectionCell
             
             let dicSlider: NSDictionary = arrSlider[indexPath.item] as! NSDictionary
+            let imageValue = dicSlider.value(forKey: SLIDE_IMAGE) as! String
             self.pageControl.numberOfPages = arrSlider.count
             self.pageControl.currentPageIndicatorTintColor = UIColor.primaryColor()
-            THelper.setImage(img: cell.imgSlider, url: URL(string: "\(dicSlider.value(forKey: SLIDE_IMAGE) ?? "")")!, placeholderImage: PLACEHOLDERIMAGE)
-            
+            let urlString = imageValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            THelper.setImage(img: cell.imgSlider,
+                             url: URL(string: urlString)!,
+                             placeholderImage: PLACEHOLDERIMAGE)
             return cell;
         } else {
             self.cvNewestBooks.register(UINib(nibName: "DashboardItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DashboardCell")

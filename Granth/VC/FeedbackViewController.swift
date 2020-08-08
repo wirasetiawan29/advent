@@ -32,6 +32,11 @@ class FeedbackViewController: UIViewController, GADBannerViewDelegate {
     
     //     MARK:-
     //     MARK:- view life cycle.
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

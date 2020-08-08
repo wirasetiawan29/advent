@@ -29,25 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
         return container
     }()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-             navBarAppearance.backgroundColor = .white
-            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).standardAppearance = navBarAppearance
-            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).scrollEdgeAppearance = navBarAppearance
-        } else {
-            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = .white
-            statusBar?.tintColor = .white
-        }
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        
 
         setUpGoogleSignIn()
         checkWalkThrough()
         
-
-
         self.window? .makeKeyAndVisible()
         let menuController = SideBarMenuViewController(nibName: "SideBarMenuViewController", bundle: nil)
         
@@ -57,6 +46,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
         frostedViewController?.liveBlur = true
         frostedViewController?.delegate = self
         frostedViewController?.panGestureEnabled = false
+
+
+        if #available(iOS 13.0, *) {
+            let app = UIApplication.shared
+            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = .primaryColor()
+            statusbarView.tintColor = .white
+            frostedViewController!.view.addSubview(statusbarView)
+
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: frostedViewController!.view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: frostedViewController!.view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: frostedViewController!.view.centerXAnchor).isActive = true
+
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = .primaryColor()
+            statusBar?.tintColor = .white
+            
+        }
+
+
         window?.rootViewController = frostedViewController
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
@@ -75,16 +93,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
 
     func checkWalkThrough() {
         window = UIWindow(frame: UIScreen.main.bounds)
-              if TPreferences.readBoolean(WALKTHROUGH) {
-                  let vc = SplashViewController(nibName: "SplashViewController", bundle: nil)
-                  navigationController = TNavigationViewController(rootViewController: vc)
-              }
-              else {
-                  let vc = walkthroughViewController(nibName: "walkthroughViewController", bundle: nil)
-                  navigationController = TNavigationViewController(rootViewController: vc)
-              }
-              TPreferences.writeString(UDID, value: UIDevice.current.identifierForVendor?.uuidString)
-              navigationController.isNavigationBarHidden = true
+        if TPreferences.readBoolean(WALKTHROUGH) {
+            let vc = SplashViewController(nibName: "SplashViewController", bundle: nil)
+            navigationController = TNavigationViewController(rootViewController: vc)
+        }
+        else {
+            let vc = walkthroughViewController(nibName: "walkthroughViewController", bundle: nil)
+            navigationController = TNavigationViewController(rootViewController: vc)
+        }
+        TPreferences.writeString(UDID, value: UIDevice.current.identifierForVendor?.uuidString)
+        navigationController.isNavigationBarHidden = true
     }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -189,4 +207,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, REFrostedViewControllerDe
     }
 
 }
+
+
 

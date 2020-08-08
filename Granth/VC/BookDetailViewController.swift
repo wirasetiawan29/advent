@@ -82,10 +82,8 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         Setupobject()
     }
-    
-    //MARK:-
+
     //MARK:- SetUpObject
-    
     func Setupobject() {
         if #available(iOS 11.0, *) {
             
@@ -129,10 +127,8 @@ class BookDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         bannerView.load(GADRequest())
         bannerView.delegate = self
     }
-    
-    //     MARK:-
+
     //     MARK:- GADBannerViewDelegate
-    
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         if IPAD {
             constraintVwBannerHeight.constant = 60
